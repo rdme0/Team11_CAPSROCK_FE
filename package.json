@@ -1,5 +1,5 @@
 {
-  "name": "Team11_CAPSROCK_FE",
+  "name": "capsrock-fe",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,10 +13,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "Team11_CAPSROCK_FE/node_modules/.bin/react-scripts start",
-    "build": "Team11_CAPSROCK_FE/node_modules/.bin/react-scripts build",
-    "test": "Team11_CAPSROCK_FE/node_modules/.bin/react-scripts test",
-    "eject": "Team11_CAPSROCK_FE/node_modules/.bin/react-scripts eject"
+    "start": "capsrock-fe/node_modules/.bin/react-scripts start",
+    "build": "capsrock-fe/node_modules/.bin/react-scripts build",
+    "test": "capsrock-fe/node_modules/.bin/react-scripts test",
+    "eject": "capsrock-fe/node_modules/.bin/react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
