@@ -1,6 +1,14 @@
 // src/components/DailyForecast.js
 import React from "react";
 
+const weatherMap = {
+  1: "맑음",
+  2: "비",
+  7: "흐림",
+  8: "구름많음",
+  9: "안개"
+};
+
 const DailyForecast = ({ data }) => {
   return (
       <div className="daily-forecast">
