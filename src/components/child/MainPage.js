@@ -14,7 +14,7 @@ const WeatherPage = () => {
           try {
             const { latitude, longitude } = position.coords;
 
-            const response = await axios.get("YOUR_SERVER_ENDPOINT/api/weather", {
+            const response = await axios.get("/api", {
               params: {
                 latitude,
                 longitude
@@ -41,10 +41,9 @@ const WeatherPage = () => {
 
   return (
       <SuperLayout
-          title="현재 날씨"
-          dashboardData={weatherData.dashBoard}
-          dailyData={weatherData.today}
-          weeklyData={weatherData.week}
+          dashboardData={weatherData.dashboard}
+          dailyData={weatherData.next23HoursWeathers}
+          weeklyData={weatherData.next7DaysWeathers}
       />
   );
 };
