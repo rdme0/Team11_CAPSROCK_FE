@@ -1,6 +1,6 @@
 // src/components/WeeklyForecast.js
 import React from "react";
-import styles from './super.css';
+import './super.css';
 
 const WeeklyForecast = ({ data }) => {
   return (

@@ -1,8 +1,8 @@
 // src/components/DailyForecast.js
 import React from "react";
-import styles from './super.css';
+import './super.css';
 
-const weatherMap = {
+export const weatherMap = {
   0: "번개",
   1: "이슬비",
   2: "비",

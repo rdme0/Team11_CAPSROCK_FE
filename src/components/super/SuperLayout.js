@@ -3,13 +3,19 @@ import React from "react";
 import Dashboard from "./Dashboard";
 import DailyForecast from "./DailyForecast";
 import WeeklyForecast from "./WeeklyForecast";
-import styles from './super.css';
+import './super.css';
 
-const WeatherLayout = ({ title, dashboardData, dailyData, weeklyData }) => {
+
+const WeatherLayout = ({ dashboardData, dailyData, weeklyData }) => {
+
+  const mainWeatherCode = dailyData?.[0]?.weather ?? 7; // 없으면 맑음 기본값
+
+  const bgClass = `weather${mainWeatherCode}`;
+  
   return (
-      <div className="weather-layout">
+      <div className={`layout ${bgClass}`}>
         {/* 최상단: 대시보드 */}
-        <Dashboard title={title} data={dashboardData} />
+        <Dashboard data={dashboardData} />
 
         {/* 중단: 일일 예보 */}
         <DailyForecast data={dailyData} />
