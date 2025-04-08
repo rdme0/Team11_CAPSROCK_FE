@@ -1,5 +1,6 @@
 // src/components/DailyForecast.js
 import React from "react";
+import styles from './super.css';
 
 const weatherMap = {
   0: "번개",

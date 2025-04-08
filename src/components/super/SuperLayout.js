@@ -3,6 +3,7 @@ import React from "react";
 import Dashboard from "./Dashboard";
 import DailyForecast from "./DailyForecast";
 import WeeklyForecast from "./WeeklyForecast";
+import styles from './super.css';
 
 const WeatherLayout = ({ title, dashboardData, dailyData, weeklyData }) => {
   return (

@@ -1,5 +1,6 @@
 // src/components/Dashboard.js
 import React from "react";
+import styles from './super.css';
 
 const Dashboard = ({ data }) => {
   return (
