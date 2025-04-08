@@ -10,38 +10,4 @@
   flex-direction: column;
   min-height: 100vh;
 }
-/* 날씨 코드별 배경 */
-.weather0 {
-    background-color: #a3c9f1;
-}
-.weather1 {
-    background-color: #a3c9f1;
-}
-.weather2 {
-    background-color: #5a9bd3;
-}
-.weather3 {
-    background-color: #4f4f4f;
-}
-.weather4 {
-    background-color: #4f4f4f;
-}
-.weather5 {
-    background-color: #a3c9f1;
-}
-.weather6 {
-    background-color: #5a9bd3;
-}
-.weather7 {
-    background-color: #4f4f4f;
-}
-.weather8 {
-    background-color: #a3c9f1;
-}
-.weather9 {
-    background-image: url("/assets/weather/cloudy.jpg");
-}
-.weather10 {
-    background-color: #5a9bd3;
-}
 
