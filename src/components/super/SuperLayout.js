@@ -19,7 +19,7 @@ const WeatherLayout = ({ dashboardData, dailyData, weeklyData }) => {
         minHeight: '100vh',
       }}>
         {/* 최상단: 대시보드 */}
-        <Dashboard data={dashboardData} />
+        <Dashboard dashboardData={dashboardData} dailyWeather={dailyData} />
 
         {/* 중단: 일일 예보 */}
         <DailyForecast data={dailyData} />

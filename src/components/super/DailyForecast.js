@@ -24,7 +24,7 @@ const DailyForecast = ({ data }) => {
         {data.map((item, index) => (
             <div key={index} className="forecast-item">
               <span className="time">{item.time.split(" ")[1].slice(0,5)}</span> 
-              <img className="icon" src={`assets/icon/${Number(item.weather)}.svg`}></img>
+              <img className="icon" src={`assets/icon/${item.weather}.svg`}></img>
               <span className="temp">{item.temp}°C</span>
             </div>
         ))}

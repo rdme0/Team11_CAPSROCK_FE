@@ -4,6 +4,21 @@
   width: 40px;
 }
 
+/* Dashboard.js */
+.cursorIcon {
+    height: 20px;
+    width: 20px;
+}
+
+.tempNow{
+    font-size: larger;
+}
+
+.mainIcon{
+    height: 45px;
+    width: 65px;
+}
+
 /* SuperLayout.js */
 .layout {
   display: flex;
