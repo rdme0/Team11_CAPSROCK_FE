@@ -19,7 +19,6 @@ export const weatherMap = {
 const DailyForecast = ({ data }) => {
   return (
       <div className="daily-forecast">
-        <h3>시간별 예보</h3>
         <div className="forecast-list">
         {data.map((item, index) => (
             <div key={index} className="forecast-item">
