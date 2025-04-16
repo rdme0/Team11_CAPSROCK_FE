@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SuperLayout from "../super/SuperLayout";
+import './child.css';
 
 const WeatherPage = () => {
   const [weatherData, setWeatherData] = useState(null);

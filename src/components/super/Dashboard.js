@@ -1,13 +1,17 @@
 // src/components/Dashboard.js
 import React from "react";
+import './super.css';
 
-const Dashboard = ({ data }) => {
+const Dashboard = ({ dashboardData, dailyWeather }) => {
+
+  const WeatherNow = dailyWeather[0]; // 첫 시간대 날씨
+  
   return (
       <div className="dashboard">
-        <div>{data.address.level1}</div>
-        <h2>{data.address.level2}</h2>
-        <div>{data.temp}°C</div>
-        <div> 최고 {data.maxTemp}°C  최저 {data.minTemp}°C</div>
+        <div><span><img className="cursorIcon" src={"assets/icon/fluent_cursor-24-filled.svg"}></img> </span>{dashboardData.address.level2}</div>
+        <h2>{dashboardData.address.level1}</h2>
+        <div className="tempNow"><img className="mainIcon" src={`assets/icon/${WeatherNow.weather}.svg`}></img>{dashboardData.temp}°</div>
+        <div className="tempMinMax"> 최고 {dashboardData.maxTemp}°  최저 {dashboardData.minTemp}°</div>
       </div>
   );
 };
