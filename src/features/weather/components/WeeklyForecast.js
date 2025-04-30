@@ -1,6 +1,6 @@
 // src/components/WeeklyForecast.js
 import React from "react";
-import './super.css';
+import '../styles/weather.css';
 
 const WeeklyForecast = ({ data }) => {
   return (
@@ -8,7 +8,7 @@ const WeeklyForecast = ({ data }) => {
         {data.map((day, index) => (
             <div key={index}>
               <span>{index === 0 ? "오늘" : day.dayOfWeek[0]}</span>
-              <span weekly-icon><img className="icon" src={`assets/icon/${day.weather}.svg`}></img></span> 
+              <span className="weekly-icon"><img className="icon" src={`/assets/weatherCodeImages/${day.weather}.svg`}></img></span> 
               <span>{day.minTemp}°C ~ {day.maxTemp}°C</span>
             </div>
         ))}

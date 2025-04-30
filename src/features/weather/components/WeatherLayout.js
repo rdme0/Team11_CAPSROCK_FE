@@ -3,13 +3,13 @@ import React from "react";
 import Dashboard from "./Dashboard";
 import DailyForecast from "./DailyForecast";
 import WeeklyForecast from "./WeeklyForecast";
-import './super.css';
+import '../styles/weather.css';
 
 const WeatherLayout = ({ dashboardData, dailyData, weeklyData }) => {
 
   const mainWeatherCode = dailyData?.[0]?.weather ?? 7; // 없으면 맑음 기본값
 
-  const backgroundImageUrl = `/assets/weather/${mainWeatherCode}.jpg`;
+  const backgroundImageUrl = `/assets/weatherCodeImages/${mainWeatherCode}.jpg`;
   
   return (
       <div className="layout" style={{

@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import MainPage from "./components/child/MainPage";
+import WeatherPage from "./pages/WeatherPage";
 
 function App() {
   return (
       <div className="App">
-        <MainPage />
+        <WeatherPage />
       </div>
   );
 }
