@@ -30,7 +30,7 @@ const mockClothingData = {
         { "time": "2025-04-03 13:00:00", "clothing": 3, "feelsLikeTemp": 7.75 },
         { "time": "2025-04-03 14:00:00", "clothing": 3, "feelsLikeTemp": 7.75 }
     ],
-    "next7DaysWeathers": [
+    "nextFewDaysWeathers": [
         { "day": "2025-04-02 12:00:00", "dayOfWeek": "수요일", "feelsLikeMaxTemp": 15.37, "feelsLikeMinTemp": 7.28, "maxTempClothing": 3, "minTempClothing": 5 },
         { "day": "2025-04-03 12:00:00", "dayOfWeek": "목요일", "feelsLikeMaxTemp": 15.37, "feelsLikeMinTemp": 7.28, "maxTempClothing": 3, "minTempClothing": 5 },
         { "day": "2025-04-04 12:00:00", "dayOfWeek": "금요일", "feelsLikeMaxTemp": 15.37, "feelsLikeMinTemp": 7.28, "maxTempClothing": 3, "minTempClothing": 5 },

@@ -30,12 +30,12 @@ const WeeklyForecast = ({ data }) => {
             ></div>
             
             <div className="temperature-range-labels">
-            {/* 최저 체감 온도 표시 예시 */}
+            {/* 최저 온도 표시 예시 */}
             <span className="min-temp">{Math.round(day.minTemp)}°</span>
-            {/* 최고 체감 온도 표시 예시 */}
+            {/* 최고 온도 표시 예시 */}
             <span className="max-temp">{Math.round(day.maxTemp)}°</span>
             </div>
-            
+
             </div>
         </div>
         );

@@ -2,14 +2,21 @@ import React from "react";
 import '../styles/clothing.css';
 
 
-const ClothingDashboard = ({ dashboardData,feedback}) => {
+const ClothingDashboard = ({ dashboardData}) => {
 
   return (
     
     <div className="ClothingDashboard">
         <h2>{dashboardData.address.level1} {dashboardData.address.level2} </h2>
-        <div className="feelsLikeTemp"><img className="clothIcon" src={`/assets/clothingCodeImages/${dashboardData.cloth}.svg`}/>{Math.round(dashboardData.feelsLikeTemp)}°</div>
-        
+
+        <div className="feels-temp-container">
+        <img className="clothIcon" src={`/assets/clothingCodeImages/${dashboardData.cloth}.svg`}/>
+        <div className="feelsLikeTemp"> {Math.round(dashboardData.feelsLikeTemp)}° </div>
+        <sup className="correction" >+{dashboardData.correction}
+        <div className="ai">AI 보정치</div> </sup>
+        </div>
+
+
         <div className="separator-line"></div>
 
         
