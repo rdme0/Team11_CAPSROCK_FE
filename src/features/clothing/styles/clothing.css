@@ -1,0 +1,149 @@
+  /* ClothingDashboard.js */
+
+.feelsLikeTemp{
+    font-size:xx-large;
+    font-weight: 700;
+}
+.clothIcon{
+    height: 60px;
+    width: 80px;
+}
+
+.evaluation-section {
+    text-align: center;
+    margin-top: 0px;    
+    margin-bottom: 10px;  
+  }
+
+.evaluation-text{
+  font-size: small;
+  margin-bottom: 5px;
+}
+
+.separator-line{
+    height: 2px; 
+    width: 200px;
+    margin: auto;
+    background-image: linear-gradient(to bottom, #C7CAFF, #FFDBFDE5);
+    margin-top: 10px;    
+    margin-bottom: 10px; 
+  }
+
+/* evaluation-button: '평가하기' 버튼 스타일 */
+.evaluation-button {
+    height: 25px;
+    width: 100px;
+    display: inline-block; 
+    background-image: linear-gradient(to bottom, #C7CAFF, #FFDBFDE5);
+    color: white; 
+    border: none;
+    padding: 8px 20px; 
+    border-radius: 20px; 
+    font-size: small; 
+    font-weight: 700;
+    line-height: 10px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 마우스 오버 시 스타일 변경 */
+  .evaluation-button:hover {
+    background-color: #d0a0ee; /* 마우스 오버 시 약간 더 진한 색 */
+  }
+  
+  /* 버튼 클릭/활성화 시 스타일 변경*/
+  .evaluation-button:active {
+    background-color: #c090dd; /* 클릭 시 색상 변화 */
+  }
+  
+
+/*DailyClothingList.js*/
+.daily-clothing{
+    background: rgba(255, 255, 255, 0.15); /* 반투명 흰색 */
+    border-radius: 20px; /* 둥근 모서리 */
+    padding: 16px;
+    margin: 16px;
+    backdrop-filter: blur(10px); /* 흐림 효과 */
+    -webkit-backdrop-filter: blur(10px); /* 사파리용 */
+    color: white;
+    font-weight: 500;
+  }
+  
+  .clothing-list{
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      gap: 20px;
+  
+      /*스크롤바 숨기기*/
+      scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+  }
+  
+  .clothing-list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  .icon {
+    height: 40px;
+    width: 40px;
+  }
+  
+  /*WeeklyClothingList.js*/
+  .weekly-clothing{
+    background: rgba(255, 255, 255, 0.15); /* 반투명 흰색 */
+    border-radius: 20px; /* 둥근 모서리 */
+    padding: 16px;
+    margin: 16px;
+    backdrop-filter: blur(10px); /* 흐림 효과 */
+    -webkit-backdrop-filter: blur(10px); /* 사파리용 */
+    color: white;
+    font-weight: 500;
+  }
+  
+  .weekly-clothing span {
+    margin-right: 1rem;
+  }
+
+  /* temperature-bar: 주간 예보의 온도 그라데이션 막대 스타일 */
+.temperature-bar {
+    height: 8px; 
+    flex-grow: 1; /* flex 컨테이너 안에서 남은 공간을 채우도록 설정 (WeeklyItem이 flex라면) */
+    margin: 0 10px; /* 온도 텍스트와의 좌우 간격 */
+    border-radius: 4px; /* 막대 모서리 둥글게 (선택 사항) */
+    /* background-image는 JavaScript에서 동적으로 설정 */
+  }
+  
+  /* WeeklyItem (WeeklyClothingList의 각 요일 항목)의 레이아웃 스타일 (예시: flexbox 사용) */
+  /* WeeklyClothingList의 map 함수에서 각 요일 항목을 감싸는 div (weekly-item)에 적용 */
+  .weekly-item {
+    display: flex; /* 자식 요소들을 가로로 배치 */
+    align-items: center; /* 자식 요소들을 세로 중앙에 정렬 */
+    margin-bottom: 10px; /* 각 요일 항목 간의 세로 간격 */
+  }
+
+  .temperature-visuals-container {
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 자식 요소들을 세로 방향으로 배치 */
+    flex-grow: 1; /* 남은 가로 공간을 이 요소가 모두 차지하도록 설정 */
+    margin-right: 15px; /* 온도 시각 요소와 옷차림 아이콘 사이 간격 */
+  }
+
+  .temperature-range-labels {
+    display: flex; /* Flexbox 사용 */
+    justify-content: space-between; /* 자식 요소(최저, 최고 온도)를 양 끝으로 최대한 벌립니다 */
+    align-items: center; /* 텍스트들을 세로 중앙에 정렬 (높이가 다를 경우) */
+    font-size: 0.9em; /* 온도 글자 크기 */
+  }
+  
+  
+  /* ClothingLayout.js */
+  .ClothingLayout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #fff;
+  }
+  
+  

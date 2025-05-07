@@ -24,7 +24,7 @@ const DailyForecast = ({ data }) => {
             <div key={index} className="forecast-item">
               <span className="time">{item.time.split(" ")[1].slice(0,5)}</span> 
               <img className="icon" src={`/assets/weatherCodeImages/${item.weather}.svg`}></img>
-              <span className="temp">{item.temp}°C</span>
+              <span className="temp">{Math.round(item.temp)}°C</span>
             </div>
         ))}
         </div>

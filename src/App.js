@@ -2,7 +2,10 @@ import './App.css';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { setupAxiosInterceptor } from './api/AxiosInstance';
+import { Routes, Route } from 'react-router-dom';
+
 import WeatherPage from "./pages/WeatherPage";
+import ClothingPage from "./pages/ClothingPage";
 
 function App() {
 
@@ -14,7 +17,10 @@ function App() {
 
   return (
       <div className="App">
-        <WeatherPage />
+        <Routes>
+          <Route path='/' element={<WeatherPage />} ></Route>
+          <Route path='/clothing' element={<ClothingPage />} ></Route>
+        </Routes>
       </div>
   );
 }

@@ -10,8 +10,14 @@ const Dashboard = ({ dashboardData, dailyWeather }) => {
   return (
       <div className="dashboard">
         <h2>{dashboardData.address.level1} {dashboardData.address.level2} </h2>
-        <div className="tempNow"><img className="mainIcon" src={`/assets/weatherCodeImages/${WeatherNow.weather}.svg`}/>{dashboardData.temp}°</div>
-        <div className="tempMinMax"> 최고 {dashboardData.maxTemp}°  최저 {dashboardData.minTemp}°</div>
+
+        
+        <div className="temp-container">
+        <img className="mainIcon" src={`/assets/weatherCodeImages/${WeatherNow.weather}.svg`}/>
+        <div className="tempNow">{Math.round(dashboardData.temp)}°</div>
+        </div>
+      
+      <div className="tempMinMax"> 최고 {Math.round(dashboardData.maxTemp)}°  최저 {Math.round(dashboardData.minTemp)}°</div>
       </div>
   );
 };

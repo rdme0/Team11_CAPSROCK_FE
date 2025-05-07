@@ -1,8 +1,3 @@
-// src/pages/WeatherPage.js
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
-// import SuperLayout from "../features/weather/components/SuperLayout";
-
 import React from 'react';
 import useWeatherData from '../features/weather/hooks/useWeatherData'; // 커스텀 훅 import
 import WeatherLayout from '../features/weather/components/WeatherLayout'; // 리팩토링된 레이아웃 import
@@ -22,7 +17,7 @@ const WeatherPage = () => {
     <WeatherLayout
       dashboardData={weatherData.dashboard}
       dailyData={weatherData.next23HoursWeathers}
-      weeklyData={weatherData.next7DaysWeathers}
+      weeklyData={weatherData.nextFewDaysWeathers}
     />
   );
 };
