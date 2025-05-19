@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import WeatherPage from "./pages/WeatherPage";
 import ClothingPage from "./pages/ClothingPage";
+import HamburgerMenu from "./components/HamburgerMenu/HamburgerMenu"
 
 function App() {
 
@@ -17,10 +18,13 @@ function App() {
 
   return (
       <div className="App">
+        <HamburgerMenu />
+        
         <Routes>
           <Route path='/' element={<WeatherPage />} ></Route>
           <Route path='/clothing' element={<ClothingPage />} ></Route>
         </Routes>
+
       </div>
   );
 }
