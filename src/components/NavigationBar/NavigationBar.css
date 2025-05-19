@@ -1,0 +1,66 @@
+/* 네비게이션 바 전체 컨테이너 */
+.navigation-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* background-color: #fff; /* 흰색 배경 제거 또는 투명하게 */
+  background-color: rgba(0, 0, 0, 0); /* 투명하게 */
+  border-top: none; /* 상단 구분선 제거 */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0; /* 상하 패딩 */
+  /* box-shadow는 필요하다면 유지 또는 조절 */
+  box-shadow: none; /* 예시: 그림자 제거 */
+  z-index: 1000;
+  /* 피그마 배경색은 이 네비게이션 바 아래에 있는 다른 요소의 배경일 수 있습니다. */
+  /* 또는 .navigation-bar에 약간의 투명한 배경색을 줄 수도 있습니다 (예: rgba(255, 255, 255, 0.1)) */
+}
+
+/* 각 네비게이션 링크 (NavLink) */
+.navigation-bar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff; /* 기본 아이콘/텍스트 색상 (피그마에 맞게 조절) */
+  transition: color 0.3s ease-in-out;
+  position: relative; /* ::before 가상 요소의 위치 기준 */
+  padding-top: 5px; /* 상단 바 공간 확보 (바 높이보다 조금 더) */
+}
+
+/* 네비게이션 아이콘 */
+.navigation-bar a img {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 3px;
+  /* 아이콘 색상 변경은 SVG 필터 또는 다른 이미지 사용 필요 */
+  filter: invert(0%); /* 기본 아이콘 색상 필터 */
+  transition: filter 0.3s ease-in-out; /* 색상 변경 애니메이션 */
+}
+
+
+/* 활성 상태 아이콘 색상 변경 (SVG 아이콘이고 필터 사용 가능 시) */
+.navigation-bar a.active img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(57%) saturate(7033%) hue-rotate(192deg) brightness(107%) contrast(102%);
+}
+
+
+/* --- 활성 상태 아이콘 위에 나타날 바 --- */
+.navigation-bar a.active::before {
+  content: ''; /* 가상 요소 필수 속성 */
+  display: block;
+  position: absolute;
+  top: 0; /* 부모의 상단에 위치 */
+  left: 0;
+  right: 0; /* 부모의 전체 너비만큼 확장 */
+  height: 4px; /* 바 두께 (조절 가능) */
+  /* background-color: #007bff; /* <-- 기존의 단색 배경 제거 */
+
+  /* --- 여기에 그라데이션 배경을 추가 --- */
+  background-image: linear-gradient(to right, #C7CAFF, #FFDBFD); 
+  /* linear-gradient(방향, 색상1, 색상2, ...); */
+
+  border-radius: 2px; /* 바 끝 둥글게 (선택 사항) */
+}
