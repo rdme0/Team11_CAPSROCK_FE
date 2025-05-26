@@ -1,3 +1,39 @@
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffd700; /* 링크 호버 시 색상 변경 */
+}
+
+/* 모바일 해상도에서는 네비게이션 숨기고 햄버거 메뉴만 표시 */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* 기본 내비게이션 숨김 */
+  }
+}
+
+/* 햄버거 메뉴는 항상 화면 우측에 표시 */
+.hamburger-container {
+  display: flex;
+}
+
 /* 네비게이션 바 전체 컨테이너 */
 .navigation-bar {
   position: fixed;

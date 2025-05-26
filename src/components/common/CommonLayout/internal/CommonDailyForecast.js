@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types"; // PropTypes를 활용해 Prop 강제 설정
-import "../../../features/weather/styles/weather.css";
 
 const CommonDailyForecast = ({ data, iconPath, renderExtraContent }) => {
   return (
@@ -12,7 +11,7 @@ const CommonDailyForecast = ({ data, iconPath, renderExtraContent }) => {
                 <span className="time">{item.time.split(" ")[1].slice(0, 5)}</span>
 
                 {/* 아이콘: 경로를 유동적으로 설정 */}
-                <img className="icon" src={`${iconPath}${item.icon}.svg`} alt="아이콘" />
+                <img className="dailyForecastIcon" src={`${iconPath}${item.icon}.svg`} alt="아이콘" />
 
                 {/* 필수적으로 표시할 콘텐츠 */}
                 {renderExtraContent(item)}

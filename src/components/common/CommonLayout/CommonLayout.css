@@ -1,0 +1,255 @@
+/* 헤더 기본 스타일 */
+.header {
+  position: fixed;         /* 화면 상단에 고정 */
+  top: 0;                  /* 페이지의 가장 위쪽에 위치 */
+  left: 0;                 /* 왼쪽 끝에 위치 */
+  width: 100%;             /* 화면 전체 너비로 확장 */
+  height: 70px;            /* 고정된 높이 설정 */
+  background: none;
+  color: white;            /* 텍스트 색상 */
+  display: flex;           /* 내부 요소 정렬을 위한 Flexbox */
+  align-items: center;     /* 세로 중앙 정렬 */
+  justify-content: space-between; /* 로고와 메뉴를 좌우로 배치 */
+  z-index: 1000;           /* 다른 요소보다 위에 표시 */
+}
+
+
+
+/* 공통 스타일 */
+.WeatherLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.6); /* 배경에 어두운 오버레이 */
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.WeatherContainer {
+  width: 100%; /* 모바일에서도 가득 차도록 설정 */
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+/* 대시보드 스타일 */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: none; /* 반투명 배경 */
+  border-radius: 15px;
+  margin-bottom: 15px;
+  margin-top: 70px;
+  height: 250px;
+}
+
+.level2Address {
+  font-size: 20px;
+}
+
+.level1Address {
+  font-size: 35px;
+}
+
+.tempNow {
+  font-size: 55px; /* 모바일에서 적절한 크기로 유지 */
+  font-weight: bold;
+}
+
+.mainIconContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.mainIcon {
+  width: 70px;
+  height: 70px;
+}
+
+/* 일일 예보 스타일 */
+.commonDailyForecast {
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  height: auto;
+  font-weight: 450;
+  margin: 30px;
+}
+
+.forecastItem {
+  min-width: 40px;
+  padding: 20px 17px 10px 17px;
+}
+
+p.temp {
+  margin : 0;
+}
+
+.forecastList {
+  display: flex;
+  justify-content: space-around;
+  overflow-x: auto;
+  background: none;
+  border-radius: 12px;
+}
+
+.forecastList::-webkit-scrollbar {
+  height: 5px;
+}
+
+.forecastList::-webkit-scrollbar-thumb {
+  background: none;
+  border-radius: 10px;
+}
+
+.forecastItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.forecastItem .time {
+  font-size: 15px;
+}
+
+.dailyForecastIcon {
+  width: 60px;
+  height: 60px;
+}
+
+/* 주간 예보 스타일 */
+.commonWeeklyForecast {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 30px;
+}
+
+.weeklyHeader {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.commonWeeklyForecast img {
+  width: 60px;
+  height: 60px;
+}
+
+.weeklyItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.weeklyItem:last-child {
+  border-bottom: none;
+}
+
+.temperatureVisualsContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.temperatureBar {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  margin: 0 10px;
+  background-color: #ddd;
+}
+
+.minMaxTempsDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.minTemp,
+.maxTemp {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 768px) {
+  .WeatherLayout {
+  }
+
+  .WeatherContainer {
+    width: 100%; /* 화면 가득 채우기 */
+    max-width: 480px;
+  }
+
+  .mainIcon {
+    width: 50px; /* 아이콘 크기 줄이기 */
+    height: 50px;
+  }
+
+  .tempNow {
+    font-size: 55px; /* 온도 크기 축소 */
+  }
+
+  .forecastItem {
+    min-width: 50px; /* 리스트 아이템 크기 줄이기 */
+  }
+
+  .commonWeeklyForecast {
+  }
+
+  .weeklyHeader {
+    font-size: 16px; /* 헤더 폰트 크기 축소 */
+  }
+
+  .weeklyItem {
+  }
+
+  .minMaxTempsDiv {
+    width: 80px; /* 온도 범위 크기 줄이기 */
+  }
+
+  .minTemp,
+  .maxTemp {
+    font-size: 12px; /* 텍스트 크기 감소 */
+  }
+}
+
+@media (max-width: 480px) {
+
+  .mainIcon {
+    width: 100px; /* 더 작은 아이콘 크기 */
+    height: 100px;
+  }
+
+  .tempNow {
+    font-size: 55px; /* 온도 크기 줄이기 */
+  }
+
+  .forecastItem {
+    min-width: 40px;
+  }
+
+  .commonWeeklyForecast {
+  }
+
+  .minTemp,
+  .maxTemp {
+    font-size: 11px;
+  }
+}

@@ -19,12 +19,8 @@ export const setupAxiosInterceptor = (navigate) => {
   axiosInstance.interceptors.response.use(
     (response) => response,
     (error) => {
-      if (
-        error.response?.status === 401 ||
-        error.response?.data?.errorCode === 'Member400_001' ||
-        error.response?.data?.errorCode === 'Auth400_001'
-      ) {
-        navigate('/login')
+      if (error.response?.status === 401) {
+        navigate('/api/login')
       }
       return Promise.reject(error)
     }

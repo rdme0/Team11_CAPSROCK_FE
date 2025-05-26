@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../../../features/weather/styles/weather.css";
 
 const CommonWeeklyForecast = ({
   headerName,
@@ -13,7 +12,7 @@ const CommonWeeklyForecast = ({
   return (
     <div className="commonWeeklyForecast">
       <div className="weeklyHeader">
-        <span>${headerName}</span>
+        <span>{headerName}</span>
       </div>
       {data.map((day, index) => {
         let underBarDiv;
