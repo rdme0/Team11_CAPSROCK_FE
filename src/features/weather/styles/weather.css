@@ -16,7 +16,7 @@
   width: 80px;
 }
 
-/* DailyForecast.js */
+/* CommonDailyForecast.js */
 .daily-forecast{
     background: rgba(255, 255, 255, 0.15); /* 반투명 흰색 */
     border-radius: 20px; /* 둥근 모서리 */
