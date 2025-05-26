@@ -1,4 +1,4 @@
-/* Dashboard.js */
+/* CommonDashboard.js */
 .temp-container{
   display: flex;
   justify-content: center;
@@ -49,7 +49,7 @@
   }
   
   
-  /*WeeklyForecast*/
+  /*CommonWeeklyForecast*/
   .weekly-forecast{
     background: rgba(255, 255, 255, 0.15); /* 반투명 흰색 */
     border-radius: 20px; /* 둥근 모서리 */
@@ -96,7 +96,7 @@
   font-size: 0.9em; /* 온도 글자 크기 */
 }
   
-  /* WeatherLayout.js */
+  /* CommonLayout.js */
   .WeatherLayout {
     display: flex;
     flex-direction: column;
