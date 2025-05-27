@@ -86,4 +86,6 @@ CommonLayout.propTypes = {
   latitude: PropTypes.number.isRequired, // 경도
 };
 
+
+
 export default CommonLayout;

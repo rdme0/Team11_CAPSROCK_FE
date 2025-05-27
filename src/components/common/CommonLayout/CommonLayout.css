@@ -85,7 +85,8 @@
 
 .forecastItem {
   min-width: 40px;
-  padding: 20px 17px 10px 17px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 p.temp {
@@ -98,6 +99,7 @@ p.temp {
   overflow-x: auto;
   background: none;
   border-radius: 12px;
+  padding: 10px;
 }
 
 .forecastList::-webkit-scrollbar {
@@ -129,30 +131,42 @@ p.temp {
 .commonWeeklyForecast {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.08);
-  border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  margin: 30px;
+  margin: 30px 30px 150px 30px;
+  background: rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  height: auto;
+  font-weight: 450;
+  padding: 20px;
+}
+
+.dayOfWeek {
+  min-width: 20px;
+  margin-right: 10px;
 }
 
 .weeklyHeader {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 12px;
   margin-bottom: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 .commonWeeklyForecast img {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
+}
+
+.commonWeeklyForecast .weeklyHeader img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 
 .weeklyItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
 }
 
 .weeklyItem:last-child {
@@ -164,92 +178,23 @@ p.temp {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  flex-direction: column;
 }
 
 .temperatureBar {
-  flex: 1;
-  height: 8px;
-  border-radius: 4px;
-  margin: 0 10px;
-  background-color: #ddd;
+  height: 10px;
+  width: 95%;
+  border-radius: 100px;
 }
 
 .minMaxTempsDiv {
   display: flex;
   justify-content: space-between;
-  width: 100px;
+  width: 95%;
+  margin-top: 5px;
 }
 
-.minTemp,
-.maxTemp {
+.minTemp, .maxTemp {
   font-size: 14px;
   font-weight: bold;
-}
-
-/* 반응형 미디어 쿼리 */
-@media (max-width: 768px) {
-  .WeatherLayout {
-  }
-
-  .WeatherContainer {
-    width: 100%; /* 화면 가득 채우기 */
-    max-width: 480px;
-  }
-
-  .mainIcon {
-    width: 50px; /* 아이콘 크기 줄이기 */
-    height: 50px;
-  }
-
-  .tempNow {
-    font-size: 55px; /* 온도 크기 축소 */
-  }
-
-  .forecastItem {
-    min-width: 50px; /* 리스트 아이템 크기 줄이기 */
-  }
-
-  .commonWeeklyForecast {
-  }
-
-  .weeklyHeader {
-    font-size: 16px; /* 헤더 폰트 크기 축소 */
-  }
-
-  .weeklyItem {
-  }
-
-  .minMaxTempsDiv {
-    width: 80px; /* 온도 범위 크기 줄이기 */
-  }
-
-  .minTemp,
-  .maxTemp {
-    font-size: 12px; /* 텍스트 크기 감소 */
-  }
-}
-
-@media (max-width: 480px) {
-
-  .mainIcon {
-    width: 100px; /* 더 작은 아이콘 크기 */
-    height: 100px;
-  }
-
-  .tempNow {
-    font-size: 55px; /* 온도 크기 줄이기 */
-  }
-
-  .forecastItem {
-    min-width: 40px;
-  }
-
-  .commonWeeklyForecast {
-  }
-
-  .minTemp,
-  .maxTemp {
-    font-size: 11px;
-  }
 }

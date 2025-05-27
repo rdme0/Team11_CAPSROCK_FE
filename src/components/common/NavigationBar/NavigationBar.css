@@ -42,14 +42,14 @@
   transform: translateX(-50%); /* 가운데 정렬 */
   width: 100%; /* 부모 너비 기준 */
   max-width: 480px; /* 모바일 기준 최대 너비 제한 */
-  height: 60px; /* 네비게이션 바 높이 */
-  background-color: rgba(255, 255, 255, 1); /* 흰색 배경 */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
-  border-radius: 12px 12px 0 0; /* 위쪽 가장자리 둥글게 처리 */
+  height: 7vh; /* 네비게이션 바 높이 */
   display: flex;
   justify-content: space-around; /* 아이템 간 동일 간격 */
   align-items: center; /* 세로 중앙 정렬 */
   z-index: 10; /* 상단 고정 */
+  background: rgba(94, 94, 94, 0.02);
+  box-shadow: 2px -1.483px 5px 0 rgba(53, 51, 51, 0.24);
+  backdrop-filter: blur(16px);
 }
 
 .navigation-bar a {
@@ -62,26 +62,21 @@
 }
 
 .navigation-bar img {
-  width: 35px;
-  height: 35px;
+  width: 5vh;
+  height: 5vh;
   margin-bottom: 3px;
-  filter: invert(30%); /* 기본 아이콘 투명도 */
   transition: filter 0.3s ease-in-out;
-}
-
-/* 활성화된 상태 스타일 (아이콘 강조) */
-.navigation-bar a.active img {
-  filter: invert(100%);
+  color: white;
 }
 
 /* 모바일 반응형 */
 @media (max-width: 480px) {
   .navigation-bar {
-    height: 50px; /* 모바일에서 줄어든 높이 */
+    height: 7vh;
   }
 
   .navigation-bar img {
-    width: 28px;
-    height: 28px; /* 모바일에서 작아진 아이콘 */
+    width: 5vh;
+    height: 5vh;
   }
 }

@@ -20,6 +20,7 @@ export const setupAxiosInterceptor = (navigate) => {
     (response) => response,
     (error) => {
       if (error.response?.status === 401) {
+        alert("로그인을 해주시기 바랍니다.");
         navigate('/api/login')
       }
       return Promise.reject(error)

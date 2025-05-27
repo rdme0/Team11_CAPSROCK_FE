@@ -1,62 +1,73 @@
 /* 로그인 페이지 스타일 */
-.login-container {
-  width: 100%;
+.loginContainer {
+  height: 100%;
   max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  margin: 0 5vh 5vh;
+  padding: 10vh 0 5vh;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+  background: none;
 }
 
-h2 {
+label {
+  color: black;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+.loginTitle {
   font-size: 24px;
-  color: #333;
+  color: black;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
-.login-form {
+.page-content {
+  height: 100vh;
+  background: linear-gradient(to bottom, #d6fff9, #dbfff2, #d4ebff);
+  overflow: hidden;
+}
+
+.loginForm {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.form-group {
+.formGroup {
   text-align: left;
-}
-
-label {
-  display: block;
-  font-size: 14px;
-  color: #333;
-  margin-bottom: 5px;
 }
 
 input {
   width: 100%;
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid black; /* 하단 테두리만 설정 */
+  outline: none;
   box-sizing: border-box;
+  background: none;
 }
 
 input:focus {
-  border-color: #007bff;
-  outline: none;
+  border-color: #b9dbff;
 }
 
-.error-message {
+
+.errorMessage {
   font-size: 14px;
-  color: red;
-  margin-top: -10px;
+  color: #fd4b4b;
+  font-weight: 600;
+  margin-top: 5px;
 }
 
-.login-button {
-  background-color: #007bff;
+.loginButton {
+  background: linear-gradient(to right, #5e7d85, #9a8e88);
   color: white;
+  font-weight: 600;
   padding: 10px;
   border: none;
   border-radius: 4px;
@@ -64,20 +75,24 @@ input:focus {
   font-size: 16px;
 }
 
-.login-button:hover {
+.loginButton:hover {
   background-color: #0056b3;
 }
 
-.register-link {
+.registerLinkContainer {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.registerLink {
   background: none;
   border: none;
-  color: #007bff;
-  text-decoration: underline;
+  color: #1f8dff;
   cursor: pointer;
   font-size: 14px;
 }
 
-.register-link:hover {
+.registerLink:hover {
   color: #0056b3;
   text-decoration: none;
 }
