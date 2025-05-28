@@ -40,7 +40,7 @@
 }
 
 /* 네비게이션 바 전체 컨테이너 */
-.navigation-bar {
+.navigationBar {
   position: fixed;
   bottom: 0;
   left: 50%; /* 화면 중앙 정렬 */
@@ -57,13 +57,13 @@
   backdrop-filter: blur(16px);
 }
 
-.navigation-bar a {
+.navigationBar a {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.navigation-bar img {
+.navigationBar img {
   width: 7vh;
   height: 7vh;
   transition: filter 0.3s ease-in-out;
@@ -72,11 +72,11 @@
 
 /* 모바일 반응형 */
 @media (max-width: 480px) {
-  .navigation-bar {
+  .navigationBar {
     height: 10vh;
   }
 
-  .navigation-bar img {
+  .navigationBar img {
     width: 7vh;
     height: 7vh;
   }

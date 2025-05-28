@@ -5,7 +5,7 @@ import './NavigationBar.css';
 function NavigationBar() {
 return (
     <nav className="navigationBar">
-      <NavLink to="/weather" className="clothingicon">
+      <NavLink to="/weather" className="weatherIcon">
         <img src="/assets/common/navigationBar/weather.svg" alt="날씨" />
     </NavLink>
 
