@@ -12,9 +12,9 @@ const WeatherPage = () => {
     return (
       <CommonDashboard
         data={dashboard}
-        forecastNow={nextFewHoursWeathers[0]}
+        forecastNow={nextFewHoursWeathers[0].temp.toFixed(1)}
         baseMainIconPath="/assets/weather/icon/"
-        iconName={getWeatherIcon(nextFewHoursWeathers[0]["weather"])}
+        iconName={getWeatherIcon(nextFewHoursWeathers[0].weather)}
         children={getMinMaxDiv(dashboard)}
       />
     );
@@ -26,19 +26,20 @@ const WeatherPage = () => {
       <CommonDailyForecast
         data={nextFewHoursWeathers.map((item) => ({
           time: item.time,
-          temp: item.temp.toFixed(1),
+          temp: item.temp,
           rainOrSnowPossibility: item.rainOrSnowPossibility,
           icon: getWeatherIcon(item.weather),
         }))}
         iconPath="/assets/weather/icon/"
         renderExtraContent={(item) => (
           <div className="weatherExtraContent">
-            {item.rainOrSnowPossibility > 0 && (
-              <p className="rainOrSnowPossibility">
+            {parseFloat(item.rainOrSnowPossibility) > 0 && (
+              <span className="rainOrSnowPossibility">
                 {item.rainOrSnowPossibility}%
-              </p>
+              </span>
             )}
-            <p className="temp">{Math.round(item.temp)}°</p>
+            {/* item.temp는 이미 문자열이므로 직접 사용 */}
+            <span className="temp">{Math.round(parseFloat(item.temp))}°</span>
           </div>
         )}
       />
