@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types"; // PropType 설정
 import "./CommonLayout.css";
-import AxiosInstance from "../../../api/AxiosInstance";
 import Header from "../header/header";
+import axiosInstance from "../../../api/AxiosInstance";
 
 const CommonLayout = ({
   dashboardComponent,
@@ -21,8 +21,8 @@ const CommonLayout = ({
 
       try {
         // 위도와 경도를 사용해 날씨 API 호출
-        const weatherNowResponse = await AxiosInstance.get(
-          `/api/weatherNow?longitude=${longitude}&latitude=${latitude}`,
+        const weatherNowResponse = await axiosInstance.get(
+          `/api/weatherNow?longitude=${longitude}&latitude=${latitude}`
         );
         setWeatherNow(weatherNowResponse.data); // 응답 데이터 상태로 설정
 

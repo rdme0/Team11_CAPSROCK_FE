@@ -22,6 +22,11 @@
   color: #ffd700; /* 링크 호버 시 색상 변경 */
 }
 
+.navigation-bar img {
+  width: 7vh;
+  height: 7vh;
+}
+
 /* 모바일 해상도에서는 네비게이션 숨기고 햄버거 메뉴만 표시 */
 @media (max-width: 768px) {
   .nav-links {
@@ -42,7 +47,7 @@
   transform: translateX(-50%); /* 가운데 정렬 */
   width: 100%; /* 부모 너비 기준 */
   max-width: 480px; /* 모바일 기준 최대 너비 제한 */
-  height: 7vh; /* 네비게이션 바 높이 */
+  height: 10vh; /* 네비게이션 바 높이 */
   display: flex;
   justify-content: space-around; /* 아이템 간 동일 간격 */
   align-items: center; /* 세로 중앙 정렬 */
@@ -56,15 +61,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-decoration: none; /* 텍스트 밑줄 제거 */
-  color: #222; /* 기본 텍스트 색상 */
-  transition: color 0.3s ease-in-out; /* 색 변경 */
 }
 
 .navigation-bar img {
-  width: 5vh;
-  height: 5vh;
-  margin-bottom: 3px;
+  width: 7vh;
+  height: 7vh;
   transition: filter 0.3s ease-in-out;
   color: white;
 }
@@ -72,11 +73,11 @@
 /* 모바일 반응형 */
 @media (max-width: 480px) {
   .navigation-bar {
-    height: 7vh;
+    height: 10vh;
   }
 
   .navigation-bar img {
-    width: 5vh;
-    height: 5vh;
+    width: 7vh;
+    height: 7vh;
   }
 }

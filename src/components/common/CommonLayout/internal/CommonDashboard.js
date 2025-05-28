@@ -31,7 +31,7 @@ const CommonDashboard = ({
             />
           )}
           {showTempNow && (
-            <div className="tempNow">{Math.round(data.temp)}°</div>
+            <div className="tempNow">{forecastNow}°</div>
           )}
         </div>
       ) : null}

@@ -5,7 +5,7 @@ import { setupAxiosInterceptor } from './api/AxiosInstance';
 import { Routes, Route } from 'react-router-dom';
 
 import WeatherPage from "./pages/weather/WeatherPage";
-// import ClothingPage from "./pages/clothing/ClothingPage";
+import ClothingPage from "./pages/clothing/ClothingPage";
 import FineDustPage from "./pages/finedust/FineDustPage";
 import UltravioletPage from "./pages/ultraviolet/UltravioletPage";
 
@@ -30,7 +30,7 @@ function App() {
 
           <Route path="/" element={<Navigate to="/weather" />} />
           <Route path='/weather' element={<WeatherPage />} ></Route>
-          {/*<Route path='/clothing' element={<ClothingPage />} ></Route>*/}
+          <Route path='/clothing' element={<ClothingPage />} ></Route>
           <Route path='/finedust' element={<FineDustPage />} ></Route>
           <Route path='/ultraviolet' element={<UltravioletPage />} ></Route>
         </Routes>
