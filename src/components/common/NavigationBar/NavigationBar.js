@@ -4,21 +4,20 @@ import './NavigationBar.css';
 
 function NavigationBar() {
 return (
-    <nav className="navigation-bar">
-      {/* NavLink 사용: 'to' 경로와 현재 경로가 일치하면 'active' 클래스 자동 추가 */}
-      <NavLink to="/" exact> {/* exact: 경로가 정확히 일치할 때만 active */}
+    <nav className="navigationBar">
+      <NavLink to="/weather" className="clothingicon">
         <img src="/assets/common/navigationBar/weather.svg" alt="날씨" />
     </NavLink>
 
-    <NavLink to="/clothing">
+    <NavLink to="/clothing" className="clothingIcon">
         <img src="/assets/common/navigationBar/clothing.svg" alt="옷차림" />
     </NavLink>
 
-    <NavLink to="/mask">
+    <NavLink to="/finedust" className="finedustIcon">
         <img src="/assets/common/navigationBar/finedust.svg" alt="마스크" />
     </NavLink>
 
-    <NavLink to="/sun">
+    <NavLink to="/ultraviolet" className="ultravioletIcon">
         <img src="/assets/common/navigationBar/ultraviolet.svg" alt="자외선" />
     </NavLink>
     </nav>

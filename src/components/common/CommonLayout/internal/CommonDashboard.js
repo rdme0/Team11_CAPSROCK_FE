@@ -60,7 +60,6 @@ CommonDashboard.propTypes = {
   showMainIcon: PropTypes.bool,
   showTempNow: PropTypes.bool,
   mainIconPath: PropTypes.string, // 메인 아이콘의 경로를 유동적으로 설정 가능
-  customContent: PropTypes.node.isRequired, // customContent는 반드시 전달해야 함
   children: PropTypes.node.isRequired,
   iconName: PropTypes.string.isRequired,
   baseMainIconPath: PropTypes.string.isRequired,
