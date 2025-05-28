@@ -23,7 +23,7 @@ const useLocationData = () => {
           },
           {
             enableHighAccuracy: false,   // 빠르게 받기 위해 false
-            timeout: 2000,               // 2초 이내로 위치 못 받으면 실패 처리
+            timeout: 10000,               // 10초 이내로 위치 못 받으면 실패 처리
             maximumAge: 1800000
           }
         );
