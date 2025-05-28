@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 
 const useLocationData = () => {
@@ -21,6 +20,11 @@ const useLocationData = () => {
             console.error("Failed to get user location:", err);
             setError("위치 정보를 가져오지 못했습니다.");
             setLoading(false);
+          },
+          {
+            enableHighAccuracy: false,   // 빠르게 받기 위해 false
+            timeout: 10000,               // 10초 이내로 위치 못 받으면 실패 처리
+            maximumAge: 1800000
           }
         );
       } else {
