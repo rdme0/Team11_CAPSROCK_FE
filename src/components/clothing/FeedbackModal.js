@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../../api/AxiosInstance"; // 실제 경로에 맞게 수정하세요
+import axiosInstance from "../../api/AxiosInstance";
 import CustomSlider from "./CustomSlider";
 
-const FeedbackModal = ({ onClose }) => {
+const FeedbackModal = ({ onClose, onSuccess }) => {
   const [scores, setScores] = useState({
     morning: 0,
     noon: 0,
@@ -28,13 +28,18 @@ const FeedbackModal = ({ onClose }) => {
         comment: comment
       });
       alert("피드백 제출이 완료되었습니다.");
+
+      // 성공 시 onSuccess 콜백 호출
+      if (onSuccess) {
+        onSuccess();
+      }
+
       navigate("/clothing");
     } catch (error) {
       console.error(error);
       alert("피드백 제출에 실패하였습니다.");
+      onClose(); // 실패 시에는 그냥 모달만 닫기
       navigate("/clothing");
-    } finally {
-      onClose();
     }
   };
 
