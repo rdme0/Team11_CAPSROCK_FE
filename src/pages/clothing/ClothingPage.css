@@ -1,0 +1,21 @@
+.forecasts {
+  display: flex;
+  flex-direction: row;
+}
+
+.plusOrMinus {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.mainIconContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+.clothingChildren .tempNow {
+  margin-left: 10px;
+}

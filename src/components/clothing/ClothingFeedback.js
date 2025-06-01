@@ -3,11 +3,21 @@ import FeedbackModal from "./FeedbackModal";
 import "./FeedbackModal.css";
 import "./ClothingFeedback.css";
 
-const ClothingFeedback = ({ havePendingFeedback }) => {
+const ClothingFeedback = ({ havePendingFeedback, onFeedbackSubmitted }) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleOpen = () => setShowModal(true);
-  const handleClose = () => setShowModal(false);
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
+  const handleFeedbackSuccess = () => {
+    setShowModal(false);
+    if (onFeedbackSubmitted) {
+      onFeedbackSubmitted();
+    }
+  };
 
   if (!havePendingFeedback) {
     return (
@@ -22,7 +32,12 @@ const ClothingFeedback = ({ havePendingFeedback }) => {
     <div className="feedbackContainer">
       지난번 옷차림 추천을 평가해주세요
       <button className={"feedbackButton"} onClick={handleOpen}>평가하기</button>
-      {showModal && <FeedbackModal onClose={handleClose} />}
+      {showModal && (
+        <FeedbackModal
+          onClose={handleClose}
+          onSuccess={handleFeedbackSuccess}
+        />
+      )}
     </div>
   );
 };
