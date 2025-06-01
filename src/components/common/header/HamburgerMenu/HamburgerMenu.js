@@ -1,39 +1,94 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // 라우팅을 위해 react-router-dom의 Link 사용
-import './HamburgerMenu.css'; // 컴포넌트 스타일 파일 import
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "./HamburgerMenu.css";
+
+// JWT 디코딩 함수
+function parseJwt(token) {
+  try {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(
+      atob(base64)
+      .split('')
+      .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+      .join('')
+    );
+    return JSON.parse(jsonPayload);
+  } catch (e) {
+    return null;
+  }
+}
 
 function HamburgerMenu() {
-  // 메뉴 열림/닫힘 상태 관리
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [UserEmail, setUserEmail] = useState(null); // 사용자 이름 상태
+  const navigate = useNavigate();
 
-  // 햄버거 아이콘 클릭 시 상태 토글
+  // 토큰 확인 및 사용자 이름 추출
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+    if (token) {
+      const payload = parseJwt(token);
+      if (payload && payload.email) {
+        setUserEmail(payload.email); // nickname 키는 백엔드 설정에 따라 변경
+      }
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+      setUserEmail(null);
+    }
+  }, []);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  
-  // 메뉴 항목(Link)을 클릭 시 메뉴를 닫는 함수
+
   const closeMenu = () => {
-    // setIsOpen 함수를 호출하여 isOpen 값을 무조건 false로 설정합니다.
     setIsOpen(false);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    setIsLoggedIn(false);
+    setUserEmail(null);
+    closeMenu();
+    navigate("/");
+  };
+
   return (
-    <div className={`hamburger-container ${isOpen ? 'menu-open' : ''}`}> {/* 상태에 따라 클래스 추가 */}
+    <div className={`hamburger-container ${isOpen ? "menu-open" : ""}`}>
       <div className="hamburger-icon" onClick={toggleMenu}>
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>
       </div>
 
-      {/* 메뉴 오버레이 (메뉴 외 영역 클릭 시 닫기 위함) */}
       {isOpen && <div className="menu-overlay" onClick={toggleMenu}></div>}
 
-      {/* 슬라이드 메뉴 */}
-      <nav className={`menu ${isOpen ? 'open' : ''}`}>
+      <nav className={`menu ${isOpen ? "open" : ""}`}>
         <ul>
-          {/* Link 컴포넌트로 각 페이지에 연결 */}
-          <li><Link to="/login" onClick={closeMenu}>로그인</Link></li>
-          {/* 필요에 따라 다른 메뉴 항목 추가 */}
+          {isLoggedIn ? (
+            <li>
+              {UserEmail ? `${UserEmail}님! ` : ""}
+              <br />
+              <button className="menuButton" onClick={handleLogout}>
+                로그아웃
+              </button>
+            </li>
+          ) : (
+            <li>
+              <button
+                className="menuButton"
+                onClick={() => {
+                  closeMenu();
+                  navigate("/login");
+                }}
+              >
+                로그인
+              </button>
+            </li>
+          )}
         </ul>
       </nav>
     </div>

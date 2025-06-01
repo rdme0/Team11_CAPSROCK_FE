@@ -1,7 +1,8 @@
 .registerContainer {
   height: 100%;
-  max-width: 400px;
-  margin: 0 5vh 5vh;
+  width: 100%;
+  max-width: 50vh;
+  margin: 10vh 5vh 5vh;
   padding: 10vh 0 5vh;
   text-align: left;
   font-size: 20px;
