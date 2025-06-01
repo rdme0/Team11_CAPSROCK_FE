@@ -42,6 +42,7 @@ const ClothingPage = () => {
                 alt="메인 아이콘"
               />
               <div className="forecastCenter">
+                <span className="feelslike">체감</span>
                 <div className="tempNow">{dashboard.feelsLikeTemp.toFixed(1)}°</div>
                 <div className="correction">
                   <span className="plusOrMinus">
