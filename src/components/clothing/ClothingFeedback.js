@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import FeedbackModal from './FeedbackModal';
+import React, { useState } from "react";
+import FeedbackModal from "./FeedbackModal";
+import "./FeedbackModal.css";
+import "./ClothingFeedback.css";
 
 const ClothingFeedback = ({ havePendingFeedback }) => {
   const [showModal, setShowModal] = useState(false);
@@ -11,7 +13,7 @@ const ClothingFeedback = ({ havePendingFeedback }) => {
     return (
       <div className="learningDescription">
         <img src="/assets/clothing/icon/ai.svg" alt="AI icon" />
-        사용자의 옷차림 특성을 학습중입니다
+        <span>사용자의 옷차림 특성을 학습중입니다</span>
       </div>
     );
   }
@@ -19,7 +21,7 @@ const ClothingFeedback = ({ havePendingFeedback }) => {
   return (
     <div className="feedbackContainer">
       지난번 옷차림 추천을 평가해주세요
-      <button onClick={handleOpen}>평가하기</button>
+      <button className={"feedbackButton"} onClick={handleOpen}>평가하기</button>
       {showModal && <FeedbackModal onClose={handleClose} />}
     </div>
   );

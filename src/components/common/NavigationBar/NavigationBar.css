@@ -46,7 +46,7 @@
   left: 50%; /* 화면 중앙 정렬 */
   transform: translateX(-50%); /* 가운데 정렬 */
   width: 100%; /* 부모 너비 기준 */
-  max-width: 480px; /* 모바일 기준 최대 너비 제한 */
+  max-width: 50vh;
   height: 10vh; /* 네비게이션 바 높이 */
   display: flex;
   justify-content: space-around; /* 아이템 간 동일 간격 */

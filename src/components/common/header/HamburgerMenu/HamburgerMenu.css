@@ -1,93 +1,108 @@
 /* 컨테이너: 아이콘 및 메뉴 전체를 감쌈 */
 .hamburger-container {
-    position: fixed; /* 화면에 고정 */
-    top: 20px; /* 상단에서 20px 떨어진 위치 */
-    left: 20px; /* 왼쪽에서 20px 떨어진 위치 */
-    z-index: 1000; /* 다른 요소들보다 위에 표시 */
-  }
-  
-  /* 햄버거 아이콘 */
-  .hamburger-icon {
-    width: 30px;
-    height: 24px; /* 3개 바와 간격 고려 */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* 바 사이에 공간 균등 분배 */
-    cursor: pointer; /* 클릭 가능한 모양 */
-    padding: 3px; /* 클릭 영역 확보 */
-    box-sizing: content-box;
-  }
-  
-  .hamburger-icon .bar {
-    width: 100%;
-    height: 4px; /* 바 두께 */
-    background-color: #fff; /* 바 색상 (피그마 디자인에 맞게 조절) */
-    border-radius: 2px;
-    transition: all 0.3s ease-in-out; /* 상태 변경 시 애니메이션 */
-  }
-  
-  /* 메뉴가 열렸을 때 아이콘 모양 변경 (선택 사항) */
-  .hamburger-container.menu-open .hamburger-icon .bar:nth-child(1) {
-    transform: translateY(10px) rotate(45deg); /* X자 모양 만들기 */
-  }
-  
-  .hamburger-container.menu-open .hamburger-icon .bar:nth-child(2) {
-    opacity: 0; /* 가운데 바 숨기기 */
-  }
-  
-  .hamburger-container.menu-open .hamburger-icon .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg); /* X자 모양 만들기 */
-  }
-  
-  
-  /* 메뉴 오버레이 (메뉴 외 검은 반투명 영역) */
-  .menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 */
-    z-index: 999; /* 메뉴보다는 아래, 다른 요소보다는 위에 */
-  }
-  
-  /* 슬라이드 메뉴 패널 */
-  .menu {
-    position: fixed; /* 화면에 고정 */
-    top: 0;
-    left: 0;
-    width: 250px; /* 메뉴 패널 너비 (조절 가능) */
-    height: 100%; /* 전체 높이 */
-    background-color: #fff; /* 메뉴 패널 배경색 (피그마에 맞게) */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
-    transform: translateX(-100%); /* 초기 상태: 왼쪽 화면 밖으로 이동하여 숨김 */
-    transition: transform 0.3s ease-in-out; /* 슬라이드 애니메이션 */
-    z-index: 1000; /* 아이콘과 동일 또는 그 이상 */
-    padding-top: 60px; /* 상단 아이콘과의 간격 확보 */
-  }
-  
-  .menu.open {
-    transform: translateX(0); /* 'open' 클래스 추가 시: 왼쪽에서 안으로 슬라이드 */
-  }
-  
-  /* 메뉴 목록 스타일 */
-  .menu ul {
-    list-style: none; /* 목록 기호 제거 */
-    padding: 0;
-    margin: 0;
-  }
-  
-  .menu li {
-    padding: 15px 20px; /* 메뉴 항목 패딩 */
-    border-bottom: 1px solid #eee; /* 항목 구분선 */
-  }
-  
-  .menu li a {
-    text-decoration: none; /* 밑줄 제거 */
-    color: #333; /* 메뉴 글자 색상 (피그마에 맞게) */
-    display: block; /* 클릭 영역 확장 */
-  }
-  
-  .menu li a:hover {
-    background-color: #f0f0f0; /* 호버 효과 */
-  }
+  top: 20px; /* 상단에서 20px 떨어진 위치 */
+  left: 20px; /* 왼쪽에서 20px 떨어진 위치 */
+  z-index: 1000; /* 다른 요소들보다 위에 표시 */
+  margin-left: 2vh;
+}
+
+/* 햄버거 아이콘 */
+.hamburger-icon {
+  width: 30px;
+  height: 24px; /* 3개 바와 간격 고려 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 바 사이에 공간 균등 분배 */
+  cursor: pointer; /* 클릭 가능한 모양 */
+  padding: 3px; /* 클릭 영역 확보 */
+  box-sizing: content-box;
+}
+
+.hamburger-icon .bar {
+  width: 100%;
+  height: 4px; /* 바 두께 */
+  background-color: #fff; /* 바 색상 (피그마 디자인에 맞게 조절) */
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out; /* 상태 변경 시 애니메이션 */
+}
+
+/* 메뉴가 열렸을 때 아이콘 모양 변경 (선택 사항) */
+.hamburger-container.menu-open .hamburger-icon .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg); /* X자 모양 만들기 */
+}
+
+.hamburger-container.menu-open .hamburger-icon .bar:nth-child(2) {
+  opacity: 0; /* 가운데 바 숨기기 */
+}
+
+.hamburger-container.menu-open .hamburger-icon .bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg); /* X자 모양 만들기 */
+}
+
+
+/* 메뉴 오버레이 (메뉴 외 검은 반투명 영역) */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* 반투명 검은색 */
+  z-index: 999; /* 메뉴보다는 아래, 다른 요소보다는 위에 */
+  backdrop-filter: blur(5px);
+}
+
+/* 슬라이드 메뉴 패널 */
+.menu {
+  position: fixed; /* 화면에 고정 */
+  top: 0;
+  left: 0;
+  width: 250px; /* 메뉴 패널 너비 (조절 가능) */
+  height: 100%; /* 전체 높이 */
+  background-color: rgba(0, 0, 0, 0.41); /* 메뉴 패널 배경색 (피그마에 맞게) */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+  transform: translateX(-100%); /* 초기 상태: 왼쪽 화면 밖으로 이동하여 숨김 */
+  transition: transform 0.3s ease-in-out; /* 슬라이드 애니메이션 */
+  z-index: 1000; /* 아이콘과 동일 또는 그 이상 */
+  padding-top: 60px; /* 상단 아이콘과의 간격 확보 */
+  backdrop-filter: blur(5px);
+  text-align: center;
+}
+
+.menu.open {
+  transform: translateX(0); /* 'open' 클래스 추가 시: 왼쪽에서 안으로 슬라이드 */
+}
+
+/* 메뉴 목록 스타일 */
+.menu ul {
+  list-style: none; /* 목록 기호 제거 */
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 15px 20px; /* 메뉴 항목 패딩 */
+}
+
+.menu li a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: #ffffff; /* 메뉴 글자 색상 (피그마에 맞게) */
+  display: block; /* 클릭 영역 확장 */
+  font-weight: bolder;
+}
+
+.menuButton {
+  background-color: rgba(0, 0, 0, 0.41); /* 메뉴 패널 배경색 (피그마에 맞게) */
+  margin-top: 10px;
+  color: white;
+  font-weight: 600;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.menu li a:hover {
+  background-color: rgba(240, 240, 240, 0.19); /* 호버 효과 */
+}
