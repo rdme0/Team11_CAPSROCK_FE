@@ -56,7 +56,7 @@ CommonDashboard.propTypes = {
   }).isRequired, // data는 필수
   forecastNow: PropTypes.shape({
     weather: PropTypes.string.isRequired, // 사용될 weather 데이터
-  }).isRequired,
+  }),
   showMainIcon: PropTypes.bool,
   showTempNow: PropTypes.bool,
   mainIconPath: PropTypes.string, // 메인 아이콘의 경로를 유동적으로 설정 가능

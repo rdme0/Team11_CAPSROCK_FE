@@ -51,4 +51,15 @@ export const getUltravioletLevelText = (ultravioletCode) => {
     5: "매우 나쁨",
   };
   return ultravioletTexts[ultravioletCode] || "안전";
+
+export const getFineDustIcon = (level) => {
+  const iconMappings = {
+    1: "good",           // 좋음
+    2: "fair",           // 보통
+    3: "moderate",       // 민감군주의
+    4: "poor",           // 나쁨
+    5: "veryPoor"       // 매우나쁨
+  };
+  
+  return iconMappings[level] || "fair";
 };

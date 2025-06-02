@@ -1,0 +1,40 @@
+.SliderRoot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 20px;
+}
+
+.SliderTrack {
+  position: relative;
+  flex-grow: 1;
+  height: 15px;
+  border-radius: 100px;
+  background: linear-gradient(
+      90deg,
+      #0051FF 0%,
+      #2FFFF5 25%,
+      #00FF80 50.5%,
+      #FFB872 75%,
+      #F00 100%
+  );
+}
+
+.SliderRange {
+  position: absolute;
+  height: 100%;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.3); /* 선택된 범위의 오버레이 */
+}
+
+.SliderThumb {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border: 2px solid #888;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
