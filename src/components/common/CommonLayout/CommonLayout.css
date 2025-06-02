@@ -1,0 +1,243 @@
+/* 헤더 기본 스타일 */
+.header {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background: none;
+  color: white;
+  display: flex;
+  justify-content: left;
+  z-index: 1000;
+  padding-top: 2vh;
+  max-width: 50vh;
+}
+
+
+
+/* 공통 스타일 */
+.WeatherLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: auto;
+  max-width: 50vh;
+}
+
+.WeatherContainer {
+  width: 100%; /* 모바일에서도 가득 차도록 설정 */
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+/* 대시보드 스타일 */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: none; /* 반투명 배경 */
+  border-radius: 15px;
+  margin-bottom: 15px;
+  margin-top: 70px;
+  height: 250px;
+}
+
+.level2Address {
+  font-size: 20px;
+}
+
+.level1Address {
+  font-size: 35px;
+}
+
+.tempNow {
+  font-size: 55px; /* 모바일에서 적절한 크기로 유지 */
+  font-weight: bold;
+}
+
+.mainIconContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.mainIcon {
+  width: 70px;
+  height: 70px;
+}
+
+/* 일일 예보 스타일 */
+.commonDailyForecast {
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  height: auto;
+  font-weight: 450;
+  margin: 30px;
+}
+
+.forecastItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+  justify-content: flex-start;
+  margin-right: 10px;
+}
+
+p.temp {
+  margin : 0;
+}
+
+.forecastList {
+  display: flex;
+  justify-content: space-around;
+  overflow-x: auto;
+  background: none;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.forecastList::-webkit-scrollbar {
+  height: 5px;
+}
+
+.forecastList::-webkit-scrollbar-thumb {
+  background: none;
+  border-radius: 10px;
+}
+
+.forecastItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.forecastItem .time {
+  font-size: 15px;
+}
+
+.dailyForecastIcon {
+  width: 60px;
+  height: 60px;
+}
+
+/* 주간 예보 스타일 */
+.commonWeeklyForecast {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 30px 30px 150px 30px;
+  background: rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  height: auto;
+  font-weight: 450;
+  padding: 20px;
+}
+
+.dayOfWeek {
+  min-width: 20px;
+  margin-right: 10px;
+}
+
+.weeklyHeader {
+  font-size: 12px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.commonWeeklyForecast img {
+  width: 55px;
+  height: 55px;
+}
+
+.commonWeeklyForecast .weeklyHeader img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.weeklyItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weeklyItem:last-child {
+  border-bottom: none;
+}
+
+.temperatureVisualsContainer {
+  
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.temperatureBar {
+  height: 10px;
+  width: 95%;
+  border-radius: 100px;
+}
+
+.minMaxTempsDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin-top: 5px;
+}
+
+.minTemp, .maxTemp {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.weeklyItem .leftIcon {
+  display: flex;
+  flex-direction: column; /* 아이콘과 그 아래 텍스트를 세로로 쌓음 */
+  align-items: center;   
+  justify-content: center;
+  padding: 0 5px;
+  min-width: 60px; /* 최소 너비 확보 */
+  position: relative; /* 자식 absolute 위치 지정을 위해 */
+}
+
+.weeklyItem .rightIcon {
+  display: flex;
+  flex-direction: column; /* 아이콘과 그 아래 텍스트를 세로로 쌓음 */
+  align-items: center;  
+  justify-content: center;
+  padding: 0 10px;
+  min-width: 70px; /* 텍스트 공간을 위해 더 넓게 */
+  position: relative; /* 자식 absolute 위치 지정을 위해 */
+  text-align: center;
+  margin-right: 25px;
+}
+
+
+/* weeklyItem 내의 이미지에만 마진 적용 */
+.weeklyItem .leftIcon img,
+.weeklyItem .rightIcon img {
+  margin-bottom: 5px; /* 아이콘 아래 텍스트와의 간격 */
+  margin-top: 5px;
+}
+
+.temperatureVisualsContainer:empty { /* 아이콘 모드가 true 일때만 중간 공간 삭제 */
+    flex-grow: 0;
+    flex-shrink: 1;
+    width: 0; /* 너비를 0으로 만들어서 공간 차지 최소화 */
+    height: 0; /* 높이도 0으로 만들어 공간 차지 최소화 */
+    padding: 0; 
+    margin: 0; 
+}

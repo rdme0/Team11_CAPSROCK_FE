@@ -1,0 +1,27 @@
+.dashboardMinMax {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.dashboardMinMax span {
+  margin : 10px
+}
+
+.weatherExtraContent {
+  margin-top: -5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.IconAndExtraContentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.weatherExtraContent .rainOrSnowPossibility {
+  font-size: 11px;
+  font-weight: normal;
+}

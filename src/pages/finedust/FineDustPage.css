@@ -1,0 +1,150 @@
+.dayOfWeek {
+  min-width: 40px; /* 너비를 늘려서 정렬 맞춤 */
+  margin-right: 10px;
+  text-align: left;
+}/* FineDustPage 스타일 */
+
+.fineDustLevels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.fineDustInfo,
+.ultraFineDustInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.fineDustLabel,
+.ultraFineDustLabel {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  flex: 1; /* 라벨이 더 많은 공간을 차지하도록 */
+}
+
+.fineDustValue,
+.ultraFineDustValue {
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  text-align: right; /* 값들을 오른쪽 정렬 */
+  min-width: 60px; /* 최소 너비 설정으로 일관된 간격 유지 */
+}
+
+.fineDustExtraContent {
+  margin-top: 8px; /* 아이콘과 텍스트 간격 증가 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.IconAndExtraContentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.dailyForecastIcon {
+  width: 45px;
+  height: 45px;
+}
+
+.fineDustLevelText {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* 주간 미세먼지 색깔 막대 스타일 */
+.dustLevelBarContainer {
+  flex: 1;
+  height: 16px; /* 24px에서 16px로 축소 */
+  margin: 0 12px 32px 12px; /* 아래쪽 간격을 20px에서 32px로 증가 */
+  border-radius: 8px; /* 12px에서 8px로 축소 */
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dustLevelSegment {
+  flex: 1;
+  min-width: 2px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.dustLevelSegment:hover {
+  opacity: 0.8;
+}
+
+/* 아침 점심 저녁 텍스트 가로 배열 */
+.morningNoonEveningDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 12px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.morning,
+.noon,
+.evening {
+  flex: 1;
+  text-align: center;
+}
+
+/* temperatureVisualsContainer 간격 조정 */
+.temperatureVisualsContainer {
+  margin-bottom: 24px; /* 각 날짜별 컨테이너 간격 증가 */
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .fineDustLevels {
+    gap: 8px;
+    margin-top: 12px;
+  }
+  
+  .fineDustInfo,
+  .ultraFineDustInfo {
+    padding: 6px 10px;
+  }
+  
+  .fineDustValue,
+  .ultraFineDustValue {
+    min-width: 50px; /* 모바일에서는 조금 더 작게 */
+  }
+  
+  .fineDustLabel,
+  .ultraFineDustLabel {
+    font-size: 13px;
+  }
+  
+  .fineDustValue,
+  .ultraFineDustValue {
+    font-size: 15px;
+  }
+  
+  .dustLevelBarContainer {
+    height: 14px; /* 20px에서 14px로 축소 */
+    margin: 0 8px 24px 8px; /* 모바일에서도 아래쪽 간격 증가 (15px에서 24px) */
+  }
+  
+  .temperatureVisualsContainer {
+    margin-bottom: 20px; /* 모바일에서는 조금 더 작게 */
+  }
+  
+  .morningNoonEveningDiv {
+    font-size: 11px;
+  }
+}

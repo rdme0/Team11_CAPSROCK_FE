@@ -1,0 +1,83 @@
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffd700; /* 링크 호버 시 색상 변경 */
+}
+
+.navigation-bar img {
+  width: 7vh;
+  height: 7vh;
+}
+
+/* 모바일 해상도에서는 네비게이션 숨기고 햄버거 메뉴만 표시 */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* 기본 내비게이션 숨김 */
+  }
+}
+
+/* 햄버거 메뉴는 항상 화면 우측에 표시 */
+.hamburger-container {
+  display: flex;
+}
+
+/* 네비게이션 바 전체 컨테이너 */
+.navigationBar {
+  position: fixed;
+  bottom: 0;
+  left: 50%; /* 화면 중앙 정렬 */
+  transform: translateX(-50%); /* 가운데 정렬 */
+  width: 100%; /* 부모 너비 기준 */
+  max-width: 50vh;
+  height: 10vh; /* 네비게이션 바 높이 */
+  display: flex;
+  justify-content: space-around; /* 아이템 간 동일 간격 */
+  align-items: center; /* 세로 중앙 정렬 */
+  z-index: 10; /* 상단 고정 */
+  background: rgba(94, 94, 94, 0.02);
+  box-shadow: 2px -1.483px 5px 0 rgba(53, 51, 51, 0.24);
+  backdrop-filter: blur(16px);
+}
+
+.navigationBar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigationBar img {
+  width: 7vh;
+  height: 7vh;
+  transition: filter 0.3s ease-in-out;
+  color: white;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 480px) {
+  .navigationBar {
+    height: 10vh;
+  }
+
+  .navigationBar img {
+    width: 7vh;
+    height: 7vh;
+  }
+}
