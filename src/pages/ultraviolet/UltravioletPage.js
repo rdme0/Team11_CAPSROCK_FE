@@ -16,7 +16,7 @@ const UltravioletPage = () => {
         showTempNow = {false}
         baseMainIconPath="/assets/ultraviolet/icon/"
         iconName={getUltravioletIcon(next23HoursUltravioletLevels[0].ultravioletLevel)}
-        children={getUVLevelTag (dashboard.ultravioletLevel)}
+        children={getUVLevelTag (dashboard.ultravioletLevel,true)}
       />
     );
   };
@@ -73,9 +73,11 @@ const UltravioletPage = () => {
   );
 };
 
-const getUVLevelTag = (data) => {
+const getUVLevelTag = (data, isDashboard = false) => {
+  const className = isDashboard ? 'dashboardUVLevelTag' : 'UVLevelTag';
+  
   return (
-    <div className="dashboardUVLevelTag">
+    <div className={className}>
       <span>{getUltravioletLevelText(data)}</span>
     </div>
   );
