@@ -177,6 +177,7 @@ p.temp {
 }
 
 .temperatureVisualsContainer {
+  
   flex: 1;
   display: flex;
   align-items: center;
@@ -200,4 +201,43 @@ p.temp {
 .minTemp, .maxTemp {
   font-size: 14px;
   font-weight: bold;
+}
+
+.weeklyItem .leftIcon {
+  display: flex;
+  flex-direction: column; /* 아이콘과 그 아래 텍스트를 세로로 쌓음 */
+  align-items: center;   
+  justify-content: center;
+  padding: 0 5px;
+  min-width: 60px; /* 최소 너비 확보 */
+  position: relative; /* 자식 absolute 위치 지정을 위해 */
+}
+
+.weeklyItem .rightIcon {
+  display: flex;
+  flex-direction: column; /* 아이콘과 그 아래 텍스트를 세로로 쌓음 */
+  align-items: center;  
+  justify-content: center;
+  padding: 0 10px;
+  min-width: 70px; /* 텍스트 공간을 위해 더 넓게 */
+  position: relative; /* 자식 absolute 위치 지정을 위해 */
+  text-align: center;
+  margin-right: 25px;
+}
+
+
+/* weeklyItem 내의 이미지에만 마진 적용 */
+.weeklyItem .leftIcon img,
+.weeklyItem .rightIcon img {
+  margin-bottom: 5px; /* 아이콘 아래 텍스트와의 간격 */
+  margin-top: 5px;
+}
+
+.temperatureVisualsContainer:empty { /* 아이콘 모드가 true 일때만 중간 공간 삭제 */
+    flex-grow: 0;
+    flex-shrink: 1;
+    width: 0; /* 너비를 0으로 만들어서 공간 차지 최소화 */
+    height: 0; /* 높이도 0으로 만들어 공간 차지 최소화 */
+    padding: 0; 
+    margin: 0; 
 }

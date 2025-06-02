@@ -28,3 +28,27 @@ export const getClothingIcon = (clothingCode) => {
   };
   return clothingIcons[clothingCode] || "hoodie";
 };
+
+export const getUltravioletIcon = (ultravioletCode) => {
+  const ultravioletIcons = {
+    0: "safe",
+    1: "excellent",
+    2: "good",
+    3: "moderate",
+    4: "bad",
+    5: "veryBad",
+  };
+  return ultravioletIcons[ultravioletCode] || "safe";
+};
+
+export const getUltravioletLevelText = (ultravioletCode) => {
+  const ultravioletTexts = {
+    0: "안전",
+    1: "매우 좋음",
+    2: "좋음",
+    3: "보통",
+    4: "나쁨",
+    5: "매우 나쁨",
+  };
+  return ultravioletTexts[ultravioletCode] || "안전";
+};

@@ -7,6 +7,7 @@ const CommonWeeklyForecast = ({
   iconPosition,
   iconPath,
   isTempMode,
+  isIconMode = false,
 }) => {
   return (
     <div className="commonWeeklyForecast">
@@ -23,15 +24,15 @@ const CommonWeeklyForecast = ({
               <div className="maxTemp">{Math.round(day.maxTemp)}°</div>
             </div>
           );
-        } else {
+        } else if (!isIconMode) {
           underBarDiv = (
             <div className="morningNoonEveningDiv">
               <div className="morning">아침</div>
               <div className="noon">점심</div>
               <div className="evening">저녁</div>
             </div>
-          );
-        }
+          );}
+      
 
         return (
           <div key={index} className="weeklyItem">
@@ -46,6 +47,7 @@ const CommonWeeklyForecast = ({
                   src={`${iconPath}/${day.leftIcon}.svg`}
                   alt="날씨 아이콘"
                 />
+                {isIconMode && <div className="leftIcon">{day.leftIconLabelText}</div>}
               </span>
             )}
             {/* 온도 시각화 */}
@@ -61,7 +63,7 @@ const CommonWeeklyForecast = ({
                   }}
                 ></div>
               )}
-              {underBarDiv}
+              {!isIconMode && underBarDiv}
             </div>
             {iconPosition === "both" && (
               <span className="rightIcon">
@@ -70,7 +72,10 @@ const CommonWeeklyForecast = ({
                   src={`${iconPath}/${day.rightIcon}.svg`}
                   alt="날씨 아이콘"
                 />
+                {isIconMode && <div className="rightIconText">{day.rightIconLabelText}</div>}
+                
               </span>
+    
             )}
           </div>
         );
