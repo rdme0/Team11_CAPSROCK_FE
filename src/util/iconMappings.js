@@ -51,6 +51,7 @@ export const getUltravioletLevelText = (ultravioletCode) => {
     5: "매우 나쁨",
   };
   return ultravioletTexts[ultravioletCode] || "안전";
+}
 
 export const getFineDustIcon = (level) => {
   const iconMappings = {
