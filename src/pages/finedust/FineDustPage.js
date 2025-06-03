@@ -2,7 +2,6 @@ import React from "react";
 import BasePage from "../../components/common/BasePage/BasePage";
 import CommonDashboard from "../../components/common/CommonLayout/internal/CommonDashboard";
 import CommonDailyForecast from "../../components/common/CommonLayout/internal/CommonDailyForecast";
-import CommonWeeklyForecast from "../../components/common/CommonLayout/internal/CommonWeeklyForecast";
 import { getFineDustIcon } from "../../util/iconMappings";
 import "./FineDustPage.css";
 
@@ -69,8 +68,8 @@ const FineDustPage = () => {
     );
   };
 
-  // 그라데이션 생성 함수 (데이터 불완전성 처리)
-  const createGradientBackground = (levels) => {
+  // 24시간 기준 그라데이션 생성 함수 (값이 없을 때 투명색 처리)
+  const createGradientBackground = (dailyFineDustLevel) => {
     const dustLevelColors = {
       1: "#0000FF", // 좋음
       2: "#00FF00", // 보통
@@ -79,27 +78,18 @@ const FineDustPage = () => {
       5: "#FF0000", // 매우나쁨
     };
 
-    if (levels.length === 0) {
-      return dustLevelColors[2]; // 보통 수준
-    }
-    
-    if (levels.length === 1) {
-      return dustLevelColors[levels[0]] || dustLevelColors[2];
-    }
-
-    const validLevels = levels.filter(level => level != null && level >= 1 && level <= 5);
-    
-    if (validLevels.length === 0) {
-      return dustLevelColors[2]; // 모든 데이터가 유효하지 않으면 보통 수준
-    }
-    
-    if (validLevels.length === 1) {
-      return dustLevelColors[validLevels[0]];
+    // 24시간 전체 배열 생성 (0시부터 23시까지)
+    const fullDayLevels = [];
+    for (let hour = 0; hour < 24; hour++) {
+      const timeKey = `${hour.toString().padStart(2, '0')}:00`;
+      const level = dailyFineDustLevel?.[timeKey];
+      fullDayLevels.push(level != null ? level : null);
     }
 
-    const colorStops = validLevels.map((level, index) => {
-      const percentage = (index / (validLevels.length - 1)) * 100;
-      return `${dustLevelColors[level] || dustLevelColors[2]} ${percentage}%`;
+    const colorStops = fullDayLevels.map((level, index) => {
+      const percentage = (index / 23) * 100; // 24시간이므로 23으로 나눔
+      const color = level != null ? (dustLevelColors[level] || dustLevelColors[2]) : "transparent";
+      return `${color} ${percentage}%`;
     });
 
     return `linear-gradient(to right, ${colorStops.join(", ")})`;
@@ -115,8 +105,7 @@ const FineDustPage = () => {
           <span>주간 미세먼지</span>
         </div>
         {next5DaysFineDustLevels.map((day, index) => {
-          const times = Object.keys(day.dailyFineDustLevel || {});
-          const levels = times.map(time => day.dailyFineDustLevel[time]);
+          const availableTimes = Object.keys(day.dailyFineDustLevel || {});
           
           return (
             <div key={index} className="weeklyItem">
@@ -134,9 +123,9 @@ const FineDustPage = () => {
                 <div 
                   className="temperatureBar"
                   style={{ 
-                    background: createGradientBackground(levels)
+                    background: createGradientBackground(day.dailyFineDustLevel)
                   }}
-                  title={`${day.dayOfWeek} - 시간별 미세먼지 레벨 (${times.length}개 시간대)`}
+                  title={`${day.dayOfWeek} - 시간별 미세먼지 레벨 (${availableTimes.length}개 시간대)`}
                 />
               </div>
             </div>
