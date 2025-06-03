@@ -11,7 +11,7 @@ const FineDustPage = () => {
     const levelMappings = {
       1: "좋음",      // Good
       2: "보통",      // Fair
-      3: "주의",      // Moderate
+      3: "한때나쁨",      // Moderate
       4: "나쁨",      // Poor
       5: "매우나쁨"   // Very Poor
     };
@@ -20,13 +20,15 @@ const FineDustPage = () => {
   };
 
   const renderDashboard = (data) => {
+
     const { dashboard } = data;
+    const maxLevel = Math.max(dashboard.fineDustLevel, dashboard.ultraFineDustLevel);
     return (
       <CommonDashboard
         data={dashboard}
         forecastNow={getFineDustLevel(dashboard.fineDustLevel)}
         baseMainIconPath="/assets/finedust/icon/"
-        iconName={getFineDustIcon(dashboard.fineDustLevel)}
+        iconName={getFineDustIcon(maxLevel)}
         showTempNow={false}
         customContent={
           <div className="fineDustLevels">
@@ -73,7 +75,7 @@ const FineDustPage = () => {
     const dustLevelColors = {
       1: "#0000FF", // 좋음
       2: "#00FF00", // 보통
-      3: "#FFFF00", // 주의
+      3: "#FFFF00", // 한때나쁨
       4: "#FFA500", // 나쁨
       5: "#FF0000", // 매우나쁨
     };
