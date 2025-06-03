@@ -1,9 +1,6 @@
-.dayOfWeek {
-  min-width: 40px; /* 너비를 늘려서 정렬 맞춤 */
-  margin-right: 10px;
-  text-align: left;
-}/* FineDustPage 스타일 */
+/* FineDustPage 전용 스타일 */
 
+/* 대시보드 미세먼지 레벨 표시 */
 .fineDustLevels {
   display: flex;
   flex-direction: column;
@@ -17,7 +14,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   backdrop-filter: blur(10px);
 }
@@ -27,7 +24,7 @@
   font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
-  flex: 1; /* 라벨이 더 많은 공간을 차지하도록 */
+  flex: 1;
 }
 
 .fineDustValue,
@@ -35,12 +32,13 @@
   font-size: 16px;
   color: white;
   font-weight: 600;
-  text-align: right; /* 값들을 오른쪽 정렬 */
-  min-width: 60px; /* 최소 너비 설정으로 일관된 간격 유지 */
+  text-align: right;
+  min-width: 60px;
 }
 
+/* 일간 예보 추가 콘텐츠 */
 .fineDustExtraContent {
-  margin-top: 8px; /* 아이콘과 텍스트 간격 증가 */
+  margin-top: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,8 +54,8 @@
 }
 
 .dailyForecastIcon {
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
 }
 
 .fineDustLevelText {
@@ -65,12 +63,98 @@
   font-weight: normal;
 }
 
-/* 주간 미세먼지 색깔 막대 스타일 */
+/* 주간 예보 스타일 */
+.commonWeeklyForecast {
+  margin-top: 20px;
+}
+
+.weeklyHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+.weeklyHeader img {
+  width: 20px;
+  height: 20px;
+}
+
+.weeklyItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.dayOfWeek {
+  min-width: 40px;
+  margin-right: 10px;
+  text-align: left;
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+}
+
+/* 온도/레벨 시각화 컨테이너 */
+.temperatureVisualsContainer {
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+/* 시간대 라벨 (아침, 점심, 저녁) */
+.morningNoonEveningDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+}
+
+.morning,
+.noon,
+.evening {
+  flex: 1;
+  text-align: center;
+}
+
+/* 온도/레벨 막대 그래프 */
+.temperatureBar {
+  width: 100%;
+  height: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  min-height: 16px;
+}
+
+.temperatureBar:hover {
+  opacity: 0.8;
+}
+
+/* JavaScript에서 동적으로 생성된 그라데이션을 위한 스타일 */
+.temperatureBar[data-gradient] {
+  background-image: attr(data-gradient);
+}
+
+/* 투명한 경우를 위한 기본 배경 */
+.temperatureBar[data-gradient="transparent"] {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 미세먼지 레벨 색상 막대 (대안 스타일) */
 .dustLevelBarContainer {
   flex: 1;
-  height: 16px; /* 24px에서 16px로 축소 */
-  margin: 0 12px 32px 12px; /* 아래쪽 간격을 20px에서 32px로 증가 */
-  border-radius: 8px; /* 12px에서 8px로 축소 */
+  height: 16px;
+  margin: 0 12px 32px 12px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -86,29 +170,7 @@
   opacity: 0.8;
 }
 
-/* 아침 점심 저녁 텍스트 가로 배열 */
-.morningNoonEveningDiv {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 12px;
-  color: white;
-  margin-bottom: 8px;
-}
-
-.morning,
-.noon,
-.evening {
-  flex: 1;
-  text-align: center;
-}
-
-/* temperatureVisualsContainer 간격 조정 */
-.temperatureVisualsContainer {
-  margin-bottom: 24px; /* 각 날짜별 컨테이너 간격 증가 */
-}
-
-/* 반응형 스타일 */
+/* 반응형 디자인 */
 @media (max-width: 768px) {
   .fineDustLevels {
     gap: 8px;
@@ -122,7 +184,7 @@
   
   .fineDustValue,
   .ultraFineDustValue {
-    min-width: 50px; /* 모바일에서는 조금 더 작게 */
+    min-width: 50px;
   }
   
   .fineDustLabel,
@@ -136,15 +198,28 @@
   }
   
   .dustLevelBarContainer {
-    height: 14px; /* 20px에서 14px로 축소 */
-    margin: 0 8px 24px 8px; /* 모바일에서도 아래쪽 간격 증가 (15px에서 24px) */
+    height: 14px;
+    margin: 0 8px 24px 8px;
   }
   
   .temperatureVisualsContainer {
-    margin-bottom: 20px; /* 모바일에서는 조금 더 작게 */
+    margin-bottom: 20px;
   }
   
   .morningNoonEveningDiv {
     font-size: 11px;
+  }
+  
+  .weeklyHeader {
+    font-size: 15px;
+  }
+  
+  .dayOfWeek {
+    min-width: 35px;
+    font-size: 13px;
+  }
+  
+  .temperatureBar {
+    height: 14px;
   }
 }
