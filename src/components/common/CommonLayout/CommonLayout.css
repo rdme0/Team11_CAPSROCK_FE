@@ -169,7 +169,7 @@ p.temp {
 .weeklyItem {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .weeklyItem:last-child {
