@@ -31,26 +31,25 @@ export const getClothingIcon = (clothingCode) => {
 
 export const getUltravioletIcon = (ultravioletCode) => {
   const ultravioletIcons = {
-    0: "safe",
-    1: "excellent",
-    2: "good",
-    3: "moderate",
-    4: "bad",
-    5: "veryBad",
+    1: "1",
+    2: "2",
+    3: "3",
+    4: "4",
+    5: "5",
   };
   return ultravioletIcons[ultravioletCode] || "safe";
 };
 
 export const getUltravioletLevelText = (ultravioletCode) => {
   const ultravioletTexts = {
-    0: "안전",
-    1: "매우 좋음",
-    2: "좋음",
-    3: "보통",
-    4: "나쁨",
-    5: "매우 나쁨",
+    1: "낮음",
+    2: "보통",
+    3: "높음",
+    4: "매우 높음",
+    5: "위험",
   };
-  return ultravioletTexts[ultravioletCode] || "안전";
+  return ultravioletTexts[ultravioletCode] || "낮음";
+}
 
 export const getFineDustIcon = (level) => {
   const iconMappings = {

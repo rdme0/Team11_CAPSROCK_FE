@@ -3,7 +3,8 @@ import BasePage from "../../components/common/BasePage/BasePage";
 import CommonDashboard from "../../components/common/CommonLayout/internal/CommonDashboard";
 import CommonDailyForecast from "../../components/common/CommonLayout/internal/CommonDailyForecast";
 import CommonWeeklyForecast from "../../components/common/CommonLayout/internal/CommonWeeklyForecast";
-import { getUltravioletIcon,getUltravioletLevelText } from "../../util/iconMappings";
+import { getUltravioletIcon } from "../../util/iconMappings";
+import getUVLevelTag from "../../components/ultraviolet/getUltravioletLevelTag";
 import "./UltravioletPage.css";
 
 const UltravioletPage = () => {
@@ -16,7 +17,7 @@ const UltravioletPage = () => {
         showTempNow = {false}
         baseMainIconPath="/assets/ultraviolet/icon/"
         iconName={getUltravioletIcon(next23HoursUltravioletLevels[0].ultravioletLevel)}
-        children={getUVLevelTag (dashboard.ultravioletLevel)}
+        children={getUVLevelTag (dashboard.ultravioletLevel,true)}
       />
     );
   };
@@ -70,14 +71,6 @@ const UltravioletPage = () => {
       renderDaily={renderDaily}
       renderWeekly={renderWeekly}
     />
-  );
-};
-
-const getUVLevelTag = (data) => {
-  return (
-    <div className="dashboardUVLevelTag">
-      <span>{getUltravioletLevelText(data)}</span>
-    </div>
   );
 };
 
