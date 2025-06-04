@@ -53,17 +53,21 @@
   justify-content: space-between;
 }
 
-.dailyForecastIcon {
-  width: 30px;
-  height: 30px;
+/* 주간 예보 스타일 - FineDustPage 전용 */
+.fineDustWeeklyForecast {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 30px 30px 150px 30px;
+  background: rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  height: auto;
+  font-weight: 450;
+  padding: 20px;
 }
 
-/* 주간 예보 스타일 */
-.commonWeeklyForecast {
-  margin-top: 20px;
-}
-
-.weeklyHeader {
+.fineDustWeeklyHeader {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -73,19 +77,19 @@
   color: white;
 }
 
-.weeklyHeader img {
+.fineDustWeeklyHeader img {
   width: 20px;
   height: 20px;
 }
 
-.weeklyItem {
+.fineDustWeeklyItem {
   display: flex;
   align-items: center;
   margin-bottom: 16px;
   gap: 12px;
 }
 
-.dayOfWeek {
+.fineDustDayOfWeek {
   min-width: 40px;
   margin-right: 10px;
   text-align: left;
@@ -94,14 +98,18 @@
   font-weight: 500;
 }
 
-/* 온도/레벨 시각화 컨테이너 */
-.temperatureVisualsContainer {
+/* 온도/레벨 시각화 컨테이너 - FineDustPage 전용 */
+.fineDustVisualsContainer {
   flex: 1;
   margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-/* 시간대 라벨 (아침, 점심, 저녁) */
-.morningNoonEveningDiv {
+/* 시간대 라벨 (아침, 점심, 저녁) - FineDustPage 전용 */
+.fineDustTimeLabelsDiv {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -110,15 +118,15 @@
   margin-bottom: 8px;
 }
 
-.morning,
-.noon,
-.evening {
-  flex: 3;
+.fineDustMorning,
+.fineDustNoon,
+.fineDustEvening {
+  flex: 1;
   text-align: center;
 }
 
-/* 온도/레벨 막대 그래프 */
-.temperatureBar {
+/* 온도/레벨 막대 그래프 - FineDustPage 전용 */
+.fineDustLevelBar {
   width: 100%;
   height: 16px;
   border-radius: 8px;
@@ -130,17 +138,17 @@
   min-height: 16px;
 }
 
-.temperatureBar:hover {
+.fineDustLevelBar:hover {
   opacity: 0.8;
 }
 
 /* JavaScript에서 동적으로 생성된 그라데이션을 위한 스타일 */
-.temperatureBar[data-gradient] {
+.fineDustLevelBar[data-gradient] {
   background-image: attr(data-gradient);
 }
 
 /* 투명한 경우를 위한 기본 배경 */
-.temperatureBar[data-gradient="transparent"] {
+.fineDustLevelBar[data-gradient="transparent"] {
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -201,24 +209,24 @@
     margin: 0 8px 24px 8px;
   }
   
-  .temperatureVisualsContainer {
+  .fineDustVisualsContainer {
     margin-bottom: 20px;
   }
   
-  .morningNoonEveningDiv {
+  .fineDustTimeLabelsDiv {
     font-size: 11px;
   }
   
-  .weeklyHeader {
+  .fineDustWeeklyHeader {
     font-size: 15px;
   }
   
-  .dayOfWeek {
+  .fineDustDayOfWeek {
     min-width: 35px;
     font-size: 13px;
   }
   
-  .temperatureBar {
+  .fineDustLevelBar {
     height: 14px;
   }
 }
