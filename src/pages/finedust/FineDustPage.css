@@ -1,10 +1,10 @@
 /* FineDustPage 전용 스타일 */
 
-/* 대시보드 미세먼지 레벨 표시 */
+/* 박스 간 간격 조정 */
 .fineDustLevels {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px; 
   margin-top: 16px;
 }
 
@@ -17,6 +17,7 @@
   background-color: rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   backdrop-filter: blur(10px);
+  gap: 5px; 
 }
 
 .fineDustLabel,
@@ -25,6 +26,7 @@
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   flex: 1;
+  margin-right: auto;
 }
 
 .fineDustValue,
@@ -34,6 +36,24 @@
   font-weight: 600;
   text-align: right;
   min-width: 60px;
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .fineDustLevels {
+    gap: 12px; 
+    margin-top: 12px;
+  }
+  
+  .fineDustInfo,
+  .ultraFineDustInfo {
+    gap: 16px;
+  }
+  
+  .fineDustLabel,
+  .ultraFineDustLabel {
+    margin-right: 12px;
+  }
 }
 
 /* 일간 예보 추가 콘텐츠 */
@@ -122,6 +142,7 @@
 .fineDustNoon,
 .fineDustEvening {
   flex: 1;
+  font-weight: 600;
   text-align: center;
 }
 

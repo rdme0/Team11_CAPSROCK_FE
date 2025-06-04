@@ -2,6 +2,7 @@ import React from "react";
 import BasePage from "../../components/common/BasePage/BasePage";
 import CommonDashboard from "../../components/common/CommonLayout/internal/CommonDashboard";
 import CommonDailyForecast from "../../components/common/CommonLayout/internal/CommonDailyForecast";
+import FineDustWeeklyForecast from "../../components/finedust/FineDustWeeklyForecast"; // 새로 추가된 import
 import { getFineDustIcon } from "../../util/iconMappings";
 import "./FineDustPage.css";
 
@@ -11,7 +12,7 @@ const FineDustPage = () => {
     const levelMappings = {
       1: "좋음",      // Good
       2: "보통",      // Fair
-      3: "한때나쁨",      // Moderate
+      3: "한때나쁨",   // Moderate
       4: "나쁨",      // Poor
       5: "매우나쁨"   // Very Poor
     };
@@ -20,7 +21,6 @@ const FineDustPage = () => {
   };
 
   const renderDashboard = (data) => {
-
     const { dashboard } = data;
     const maxLevel = Math.max(dashboard.fineDustLevel, dashboard.ultraFineDustLevel);
     return (
@@ -70,71 +70,8 @@ const FineDustPage = () => {
     );
   };
 
-  // 24시간 기준 그라데이션 생성 함수 (값이 없을 때 투명색 처리)
-  const createGradientBackground = (dailyFineDustLevel) => {
-    const dustLevelColors = {
-      1: "#0000FF", // 좋음
-      2: "#00FF00", // 보통
-      3: "#FFFF00", // 한때나쁨
-      4: "#FFA500", // 나쁨
-      5: "#FF0000", // 매우나쁨
-    };
-
-    // 24시간 전체 배열 생성 (0시부터 23시까지)
-    const fullDayLevels = [];
-    for (let hour = 0; hour < 24; hour++) {
-      const timeKey = `${hour.toString().padStart(2, '0')}:00`;
-      const level = dailyFineDustLevel?.[timeKey];
-      fullDayLevels.push(level != null ? level : null);
-    }
-
-    const colorStops = fullDayLevels.map((level, index) => {
-      const percentage = (index / 23) * 100; // 24시간이므로 23으로 나눔
-      const color = level != null ? (dustLevelColors[level] || dustLevelColors[2]) : "transparent";
-      return `${color} ${percentage}%`;
-    });
-
-    return `linear-gradient(to right, ${colorStops.join(", ")})`;
-  };
-
   const renderWeekly = (data) => {
-    const { next5DaysFineDustLevels } = data;
-
-    return (
-      <div className="fineDustWeeklyForecast">
-        <div className="fineDustWeeklyHeader">
-          <img alt={"달력 아이콘"} src="/assets/common/icon/calendar.svg"/>
-          <span>주간 미세먼지</span>
-        </div>
-        {next5DaysFineDustLevels.map((day, index) => {
-          const availableTimes = Object.keys(day.dailyFineDustLevel || {});
-          
-          return (
-            <div key={index} className="fineDustWeeklyItem">
-              <div className="fineDustDayOfWeek">
-                {index === 0 ? "오늘" : day.dayOfWeek[0]}
-              </div>
-
-              <div className="fineDustVisualsContainer">
-                <div className="fineDustTimeLabelsDiv">
-                  <div className="fineDustMorning">아침</div>
-                  <div className="fineDustNoon">점심</div>
-                  <div className="fineDustEvening">저녁</div>
-                </div>
-                
-                <div 
-                  className="fineDustLevelBar"
-                  style={{ 
-                    background: createGradientBackground(day.dailyFineDustLevel)
-                  }}
-                  title={`${day.dayOfWeek} - 시간별 미세먼지 레벨 (${availableTimes.length}개 시간대)`}
-                />
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    );
+    return <FineDustWeeklyForecast data={data} />;
   };
 
   return (
