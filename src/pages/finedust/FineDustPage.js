@@ -50,23 +50,25 @@ const FineDustPage = () => {
   const renderDaily = (data) => {
     const { next23HoursFineDustLevels } = data;
     return (
-      <CommonDailyForecast
-        data={next23HoursFineDustLevels.map((item) => ({
-          time: item.time,
-          level: item.FineDustLevel,
-          icon: getFineDustIcon(item.FineDustLevel),
-        }))}
-        iconPath="/assets/finedust/icon/"
-        renderExtraContent={(item) => (
-          <div className="IconAndExtraContentContainer">
-            <div className="fineDustExtraContent">
-              <span className="fineDustLevelText">
-                {getFineDustLevel(item.level)}
-              </span>
+      <div className="fineDustPage"> 
+        <CommonDailyForecast
+          data={next23HoursFineDustLevels.map((item) => ({
+            time: item.time,
+            level: item.FineDustLevel,
+            icon: getFineDustIcon(item.FineDustLevel),
+          }))}
+          iconPath="/assets/finedust/icon/"
+          renderExtraContent={(item) => (
+            <div className="IconAndExtraContentContainer">
+              <div className="fineDustExtraContent">
+                <span className="fineDustLevelText">
+                  {getFineDustLevel(item.level)}
+                </span>
+              </div>
             </div>
-          </div>
-        )}
-      />
+          )}
+        />
+      </div>
     );
   };
 
@@ -101,8 +103,8 @@ const FineDustPage = () => {
     const { next5DaysFineDustLevels } = data;
 
     return (
-      <div className="commonWeeklyForecast">
-        <div className="weeklyHeader">
+      <div className="fineDustWeeklyForecast">
+        <div className="fineDustWeeklyHeader">
           <img alt={"달력 아이콘"} src="/assets/common/icon/calendar.svg"/>
           <span>주간 미세먼지</span>
         </div>
@@ -110,20 +112,20 @@ const FineDustPage = () => {
           const availableTimes = Object.keys(day.dailyFineDustLevel || {});
           
           return (
-            <div key={index} className="weeklyItem">
-              <div className="dayOfWeek">
+            <div key={index} className="fineDustWeeklyItem">
+              <div className="fineDustDayOfWeek">
                 {index === 0 ? "오늘" : day.dayOfWeek[0]}
               </div>
 
-              <div className="temperatureVisualsContainer">
-                <div className="morningNoonEveningDiv">
-                  <div className="morning">아침</div>
-                  <div className="noon">점심</div>
-                  <div className="evening">저녁</div>
+              <div className="fineDustVisualsContainer">
+                <div className="fineDustTimeLabelsDiv">
+                  <div className="fineDustMorning">아침</div>
+                  <div className="fineDustNoon">점심</div>
+                  <div className="fineDustEvening">저녁</div>
                 </div>
                 
                 <div 
-                  className="temperatureBar"
+                  className="fineDustLevelBar"
                   style={{ 
                     background: createGradientBackground(day.dailyFineDustLevel)
                   }}
