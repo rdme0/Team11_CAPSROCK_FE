@@ -50,25 +50,23 @@ const FineDustPage = () => {
   const renderDaily = (data) => {
     const { next23HoursFineDustLevels } = data;
     return (
-      <div className="fineDustPage"> 
-        <CommonDailyForecast
-          data={next23HoursFineDustLevels.map((item) => ({
-            time: item.time,
-            level: item.FineDustLevel,
-            icon: getFineDustIcon(item.FineDustLevel),
-          }))}
-          iconPath="/assets/finedust/icon/"
-          renderExtraContent={(item) => (
-            <div className="IconAndExtraContentContainer">
-              <div className="fineDustExtraContent">
-                <span className="fineDustLevelText">
-                  {getFineDustLevel(item.level)}
-                </span>
-              </div>
+      <CommonDailyForecast
+        data={next23HoursFineDustLevels.map((item) => ({
+          time: item.time,
+          level: item.FineDustLevel,
+          icon: getFineDustIcon(item.FineDustLevel),
+        }))}
+        iconPath="/assets/finedust/icon/"
+        renderExtraContent={(item) => (
+          <div className="IconAndExtraContentContainer">
+            <div className="fineDustExtraContent">
+              <span className="fineDustLevelText">
+                {getFineDustLevel(item.level)}
+              </span>
             </div>
-          )}
-        />
-      </div>
+          </div>
+        )}
+      />
     );
   };
 
