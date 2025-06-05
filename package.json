@@ -27,7 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build --repo=https://github.com/JNU-SW-Capstone-Team11-CAPSROCK/Team11_CAPSROCK_FE.git"
   },
   "eslintConfig": {
     "extends": [
