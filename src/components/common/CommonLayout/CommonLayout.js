@@ -56,7 +56,7 @@ const CommonLayout = ({
     <div
       className="WeatherLayout"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL}${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100vh",

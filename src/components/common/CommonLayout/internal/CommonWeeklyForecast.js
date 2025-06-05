@@ -12,7 +12,7 @@ const CommonWeeklyForecast = ({
   return (
     <div className="commonWeeklyForecast">
       <div className="weeklyHeader">
-        <img alt={"달력 아이콘"} src="/assets/common/icon/calendar.svg"/>
+        <img alt={"달력 아이콘"} src={`${process.env.PUBLIC_URL}/assets/common/icon/calendar.svg`}/>
         <span>{headerName}</span>
       </div>
       {data.map((day, index) => {
@@ -44,7 +44,7 @@ const CommonWeeklyForecast = ({
               <span className="leftIcon">
                 <img
                   className="leftIconImage"
-                  src={`${iconPath}/${day.leftIcon}.svg`}
+                  src={`${process.env.PUBLIC_URL}${iconPath}/${day.leftIcon}.svg`}
                   alt="날씨 아이콘"
                 />
                 {isIconMode && <div className="leftIcon">{day.leftIconLabelText}</div>}
@@ -69,7 +69,7 @@ const CommonWeeklyForecast = ({
               <span className="rightIcon">
                 <img
                   className="rightIconImage"
-                  src={`${iconPath}/${day.rightIcon}.svg`}
+                  src={`${process.env.PUBLIC_URL}${iconPath}/${day.rightIcon}.svg`}
                   alt="날씨 아이콘"
                 />
                 {isIconMode && <div className="rightIconText">{day.rightIconLabelText}</div>}

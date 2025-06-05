@@ -12,7 +12,7 @@ const CommonDailyForecast = ({ data, iconPath, renderExtraContent }) => {
             <div className="IconAndExtraContentContainer">
               {/* 아이콘: 경로를 유동적으로 설정 */}
               <img className="dailyForecastIcon"
-                   src={`${iconPath}${item.icon}.svg`} alt="아이콘" />
+                   src={`${process.env.PUBLIC_URL}${iconPath}${item.icon}.svg`} alt="아이콘" />
 
               {/* 필수적으로 표시할 콘텐츠 */}
               {renderExtraContent(item)}

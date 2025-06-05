@@ -22,7 +22,7 @@ const ClothingFeedback = ({ havePendingFeedback, onFeedbackSubmitted }) => {
   if (!havePendingFeedback) {
     return (
       <div className="learningDescription">
-        <img src="/assets/clothing/icon/ai.svg" alt="AI icon" />
+        <img src={`${process.env.PUBLIC_URL}/assets/clothing/icon/ai.svg`} alt="AI icon" />
         <span>사용자의 옷차림 특성을 학습중입니다</span>
       </div>
     );

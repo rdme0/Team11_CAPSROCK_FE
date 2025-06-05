@@ -15,7 +15,7 @@ const CommonDashboard = ({
     <div className="dashboard">
       {/* 주소 표시 */}
       <span className="level2Address">
-        <img className="gpsIcon" src={`/assets/common/icon/gpsIcon.svg`} alt="gps 아이콘" />
+        <img className="gpsIcon" src={`${process.env.PUBLIC_URL}/assets/common/icon/gpsIcon.svg`} alt="gps 아이콘" />
         {data.address.level2}
       </span>
       <span className="level1Address">{data.address.level1}</span>
@@ -26,7 +26,7 @@ const CommonDashboard = ({
           {showMainIcon && (
             <img
               className="mainIcon"
-              src={`${baseMainIconPath}${iconName}.svg`}
+              src={`${process.env.PUBLIC_URL}${baseMainIconPath}${iconName}.svg`}
               alt="메인 아이콘"
             />
           )}

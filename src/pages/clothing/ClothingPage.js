@@ -37,7 +37,7 @@ const ClothingPage = () => {
             <div className="mainIconContainer">
               <img
                 className="mainIcon"
-                src={`/assets/clothing/icon/${getClothingIcon(
+                src={`${process.env.PUBLIC_URL}/assets/clothing/icon/${getClothingIcon(
                   dashboard.clothingId)}.svg`}
                 alt="메인 아이콘"
               />

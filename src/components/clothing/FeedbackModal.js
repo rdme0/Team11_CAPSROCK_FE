@@ -53,7 +53,7 @@ const FeedbackModal = ({ onClose, onSuccess }) => {
           return (
             <div key={timeKey} className="sliderRow">
               <div className="iconLabel">
-                <img src={`/assets/clothing/icon/${timeLabel}.svg`}
+                <img src={`${process.env.PUBLIC_URL}/assets/clothing/icon/${timeLabel}.svg`}
                      alt={timeLabel} />
                 <span>{timeLabel}</span>
               </div>
