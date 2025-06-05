@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Team11_CAPSROCK_FE/static/css/main.35ecbae0.css",
+    "main.js": "/Team11_CAPSROCK_FE/static/js/main.c24cdb55.js",
+    "static/js/453.cdab07dc.chunk.js": "/Team11_CAPSROCK_FE/static/js/453.cdab07dc.chunk.js",
+    "index.html": "/Team11_CAPSROCK_FE/index.html",
+    "main.35ecbae0.css.map": "/Team11_CAPSROCK_FE/static/css/main.35ecbae0.css.map",
+    "main.c24cdb55.js.map": "/Team11_CAPSROCK_FE/static/js/main.c24cdb55.js.map",
+    "453.cdab07dc.chunk.js.map": "/Team11_CAPSROCK_FE/static/js/453.cdab07dc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.35ecbae0.css",
+    "static/js/main.c24cdb55.js"
+  ]
+}
