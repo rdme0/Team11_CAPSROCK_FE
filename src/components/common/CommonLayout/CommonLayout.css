@@ -145,10 +145,11 @@ p.temp {
 }
 
 .dayOfWeek {
-  min-width: 20px;
+  width: 35px;
+  text-align: center;
   margin-right: 10px;
+  flex-shrink: 0;
 }
-
 .weeklyHeader {
   font-size: 12px;
   margin-bottom: 10px;
@@ -202,29 +203,6 @@ p.temp {
   font-size: 14px;
   font-weight: bold;
 }
-
-.weeklyItem .leftIcon {
-  display: flex;
-  flex-direction: column; /* 아이콘과 그 아래 텍스트를 세로로 쌓음 */
-  align-items: center;   
-  justify-content: center;
-  padding: 0 5px;
-  min-width: 60px; /* 최소 너비 확보 */
-  position: relative; /* 자식 absolute 위치 지정을 위해 */
-}
-
-.weeklyItem .rightIcon {
-  display: flex;
-  flex-direction: column; /* 아이콘과 그 아래 텍스트를 세로로 쌓음 */
-  align-items: center;  
-  justify-content: center;
-  padding: 0 10px;
-  min-width: 70px; /* 텍스트 공간을 위해 더 넓게 */
-  position: relative; /* 자식 absolute 위치 지정을 위해 */
-  text-align: center;
-  margin-right: 25px;
-}
-
 
 /* weeklyItem 내의 이미지에만 마진 적용 */
 .weeklyItem .leftIcon img,
